@@ -1,0 +1,130 @@
+{
+  "slug": "ramp",
+  "name": "Ramp",
+  "domain": "ramp.com",
+  "summary": "# Ramp — Machine Version **Quick links:** [Docs](https://docs.ramp.com/) · [Help Center](https://support.ramp.com/) · [Integrations](https://ramp.com/integrations) · [Pricing](https://ramp.com/pricing) · [Trust Center](https://trust.ramp.com/) --- ## Ramp Promotional Offer Ramp is currently offering a $3,100 signup bon",
+  "facts": [
+    {
+      "label": "Headquarters",
+      "value": "New York City",
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "stage": "Series A",
+      "amount": "$15 million",
+      "investors": [
+        "Founders Fund"
+      ],
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series B",
+      "amount": "$30 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series C",
+      "amount": "$300 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series D",
+      "amount": "$300 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$750 million",
+      "investors": [
+        "Lightspeed Venture Partners with new investors such as Bessemer Venture Partners"
+      ],
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series C",
+      "amount": "$3.9 Billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series D",
+      "amount": "$300m",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$22.5 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$750 million",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "amount": "$3 billion",
+      "citations": [
+        4
+      ]
+    }
+  ],
+  "competitors": [
+    "Brex"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Ramp",
+      "title": "Inclined plane - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://ramp.com/",
+      "title": "https://ramp.com/",
+      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ramp_(company)",
+      "title": "Ramp (company) - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.forbes.com/companies/ramp/",
+      "title": "Ramp | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://techcrunch.com/2026/06/04/ramp-raises-750m-at-44b-valuation-as-investors-hunger-for-fintechs-with-an-ai-story/",
+      "title": "Ramp raises $750M at $44B valuation as investors hunger for fintechs with an AI story | TechCrunch",
+      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:27.060Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

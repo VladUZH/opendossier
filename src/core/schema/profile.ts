@@ -11,13 +11,14 @@ import { z } from 'zod';
  *  - It serialises to a single JSON file — a greppable, forkable corpus, not a locked DB.
  */
 
-export const SourceKind = z.enum(['homepage', 'wikipedia', 'search', 'other']);
+export const SourceKindSchema = z.enum(['homepage', 'wikipedia', 'search', 'other']);
+export type SourceKind = z.infer<typeof SourceKindSchema>;
 
 export const SourceSchema = z.object({
   url: z.string().url(),
   title: z.string(),
   fetchedAt: z.string().datetime(),
-  kind: SourceKind,
+  kind: SourceKindSchema,
 });
 
 export const FactSchema = z.object({

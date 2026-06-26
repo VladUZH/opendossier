@@ -1,0 +1,62 @@
+{
+  "slug": "hugging-face",
+  "name": "Hugging Face",
+  "domain": "huggingface.co",
+  "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science. The AI community building the future.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2016",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "New York City",
+      "citations": [
+        0
+      ]
+    }
+  ],
+  "funding": [],
+  "competitors": [],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Hugging_Face",
+      "title": "Hugging Face - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://huggingface.co/",
+      "title": "Hugging Face – The AI community building the future.",
+      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.forbes.com/companies/hugging-face/",
+      "title": "Hugging Face | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.ibm.com/think/topics/hugging-face",
+      "title": "What is Hugging Face? | IBM",
+      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://huggingface.co/organizations",
+      "title": "Organizations - Hugging Face",
+      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:19.777Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

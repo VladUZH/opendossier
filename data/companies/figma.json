@@ -1,0 +1,119 @@
+{
+  "slug": "figma",
+  "name": "Figma",
+  "domain": "figma.com",
+  "summary": "Figma is the leading collaborative design platform for building meaningful products. Design, prototype, and build products faster—while gathering feedback all in one place.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2012",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "San Francisco",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "2,877",
+      "citations": [
+        4
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$749M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$749M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Ipo",
+      "amount": "$749M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$416M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$416M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series C",
+      "amount": "$476M",
+      "citations": [
+        4
+      ]
+    }
+  ],
+  "competitors": [
+    "companies like Miro",
+    "Lucid",
+    "Lucidchart",
+    "Inc",
+    "Miro",
+    "San Francisco (United States)",
+    "Fidelity Investments"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Figma",
+      "title": "Figma - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.figma.com/",
+      "title": "Figma: The Collaborative Interface Design Tool",
+      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://investor.figma.com/overview/default.aspx",
+      "title": "Investor Relations | Figma, Inc.",
+      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.forbes.com/companies/figma/",
+      "title": "Figma | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://tracxn.com/d/companies/figma/__ax4OtPOcmyjsFUT81_oGsjztypgqH8K3cQ0_zcUnNBo",
+      "title": "Figma - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:23.932Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

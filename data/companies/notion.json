@@ -1,0 +1,86 @@
+{
+  "slug": "notion",
+  "name": "Notion",
+  "domain": "notion.com",
+  "summary": "Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2013",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "San Francisco. History",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "10",
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "stage": "Seed",
+      "amount": "$2 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$50 million",
+      "investors": [
+        "Coatue Management"
+      ],
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "competitors": [],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Notion",
+      "title": "Notion - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.notion.com/",
+      "title": "The AI workspace that works for you. | Notion",
+      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+      "title": "Notion (productivity software) - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.linkedin.com/company/notionhq/",
+      "title": "Notion | LinkedIn",
+      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.forbes.com/companies/notion/",
+      "title": "Notion | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:22.001Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

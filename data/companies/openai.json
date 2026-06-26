@@ -1,0 +1,114 @@
+{
+  "slug": "openai",
+  "name": "OpenAI",
+  "domain": "forbes.com",
+  "summary": "OpenAI, the company that kicked off the AI frenzy three years ago, is at an inflection point. With increasing financial pressure ahead of a highly-anticipated IPO — and archrival Anthropic picking up steam — the company is going through a strategic shift.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2015",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "San Francisco",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "52",
+      "citations": [
+        0
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$180",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series G",
+      "amount": "$180",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series G",
+      "amount": "$75M",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series G",
+      "amount": "$75M",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series G",
+      "amount": "$180",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "stage": "Series H",
+      "amount": "$132",
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "competitors": [
+    "companies like Mistral AI",
+    "Anthropic",
+    "Cohere",
+    "Llc CIN: 831960637",
+    "United States",
+    "Active Sep 18",
+    "2018 - 2063 (As on Dec 31",
+    "Mistral AI",
+    "San Francisco (United States)",
+    "Goldman Sachs",
+    "85 others 89/100 2nd Mistral AI 2023",
+    "Paris (France)",
+    "Series C Provider of customizable",
+    "solutions for  applications $3"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/OpenAI",
+      "title": "OpenAI - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.forbes.com/companies/openai/",
+      "title": "OpenAI | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://tracxn.com/d/companies/openai/__kElhSG7uVGeFk1i71Co9-nwFtmtyMVT7f-YHMn4TFBg",
+      "title": "OpenAI - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:12.185Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

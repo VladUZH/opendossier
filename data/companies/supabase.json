@@ -1,0 +1,145 @@
+{
+  "slug": "supabase",
+  "name": "Supabase",
+  "domain": "supabase.com",
+  "summary": "Supabase is the community that builds the infrastructure for your applications. Build using Supabase for any size project—from a new startup to even large growing companies Join one of the world's fastest growing open source communities.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2020",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "Singapore",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "359",
+      "citations": [
+        3
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$116 million",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "stage": "Angel",
+      "amount": "$80M",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "amount": "$1.04",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$1.04",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "amount": "$1.04",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$500M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$500M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series C",
+      "amount": "$291M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series A",
+      "amount": "$55M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series B",
+      "amount": "$56.5M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$500M",
+      "citations": [
+        3
+      ]
+    }
+  ],
+  "competitors": [
+    "companies like YugabyteDB",
+    "NEON",
+    "PubNub",
+    "YugabyteDB",
+    "Sunnyvale (United States)",
+    "Sapphire Ventures"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Sugababes",
+      "title": "Sugababes - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:18.559Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://supabase.com/company",
+      "title": "One of the world's fastest-growing open source communities | Supabase",
+      "fetchedAt": "2026-06-26T22:42:18.559Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://supabase.com/",
+      "title": "Supabase | The Postgres Development Platform.",
+      "fetchedAt": "2026-06-26T22:42:18.559Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://tracxn.com/d/companies/supabase/__Eu-Qv0PGLlKKydFQbekQazgnqS4w5jeSDfFyg6oGPjg",
+      "title": "Supabase - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+      "fetchedAt": "2026-06-26T22:42:18.559Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:18.559Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

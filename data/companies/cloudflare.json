@@ -1,0 +1,57 @@
+{
+  "slug": "cloudflare",
+  "name": "Cloudflare",
+  "domain": "cloudflare.com",
+  "summary": "Welcome to Cloudflare - Powering the next generation of applications Hero video off in Low preview — use High mode and refresh for full motion. Agents Week is happening now April 13 - April 17!",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2009",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "San Francisco, California",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "50",
+      "citations": [
+        1
+      ]
+    }
+  ],
+  "funding": [],
+  "competitors": [],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Cloudflare",
+      "title": "Cloudflare - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.cloudflare.com/",
+      "title": "Cloudflare: Build for the agent era",
+      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.cloudflare.com/about-overview/",
+      "title": "About us | Cloudflare",
+      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:25.828Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

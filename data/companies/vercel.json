@@ -1,0 +1,170 @@
+{
+  "slug": "vercel",
+  "name": "Vercel",
+  "domain": "vercel.com",
+  "summary": "The autonomous stack for every app and agent. Build agents on infrastructure that thinks like them Notion powers millions of agent conversations daily on Vercel.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2015",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "Covina",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "915",
+      "citations": [
+        3
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "stage": "Series F",
+      "amount": "$300 million",
+      "investors": [
+        "Accel"
+      ],
+      "citations": [
+        0
+      ]
+    },
+    {
+      "stage": "Series E",
+      "amount": "$250 m",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$9.3",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$21 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "stage": "Series C",
+      "amount": "$102M",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$863M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$863M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "amount": "$863M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$300M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$300M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series D",
+      "amount": "$212M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series F",
+      "amount": "$863M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Series E",
+      "amount": "$614M",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "stage": "Seed",
+      "amount": "$12M",
+      "citations": [
+        3
+      ]
+    }
+  ],
+  "competitors": [
+    "companies like Netlify",
+    "Gitlab",
+    "DigitalOcean",
+    "Netlify",
+    "San Francisco (United States)",
+    "deployment $212M Kleiner Perkins",
+    "Bessemer Venture Partners"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Vercel",
+      "title": "Vercel - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://vercel.com/",
+      "title": "Agentic Infrastructure",
+      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://vercel.com/about",
+      "title": "About Us",
+      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://tracxn.com/d/companies/vercel/__uPuJfXzfvAQs0wmUuqRiXFxW4uGbcaKUHjHks8VPbrI",
+      "title": "Vercel - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:14.966Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

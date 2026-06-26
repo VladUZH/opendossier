@@ -1,0 +1,81 @@
+{
+  "slug": "perplexity-ai",
+  "name": "Perplexity AI",
+  "domain": "forbes.com",
+  "summary": "Perplexity wants to make search engines without AI a thing of the past. Cofounded by Aravind Srinivas, Johnny Ho, Denis Yarats and Andy Konwinski in 2022, it uses a medley of AI models to answer users’ questions on a wide range of topics, which it backs up with footnoted sources.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2022",
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$20 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "stage": "Series E",
+      "amount": "$34.5 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$200 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$200M",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$170",
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "competitors": [],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Perplexity_AI",
+      "title": "Perplexity AI - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://www.forbes.com/companies/perplexity/",
+      "title": "Perplexity | Company Overview & News",
+      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://techfundingnews.com/perplexity-raises-200m-at-20b-valuation-ai-search/",
+      "title": "Perplexity AI scores $200M at $20B valuation, amid growing competition in AI Search — TFN",
+      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://techstartups.com/2026/04/08/perplexity-revenue-surges-50-as-ai-startup-shifts-from-search-to-autonomous-ai-agents/",
+      "title": "Perplexity revenue surges 50% as AI startup shifts from search to autonomous AI agents - Tech Startups",
+      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:41.146Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}

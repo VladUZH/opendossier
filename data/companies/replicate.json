@@ -1,0 +1,119 @@
+{
+  "slug": "replicate",
+  "name": "Replicate",
+  "domain": "replicate.com",
+  "summary": "Run open-source machine learning models with a cloud API Try HappyHorse 1.1 from Alibaba Run AI with an API. Run and fine-tune models.",
+  "facts": [
+    {
+      "label": "Founded",
+      "value": "2018",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "Berkeley",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Employees",
+      "value": "26",
+      "citations": [
+        4
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$57.8M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series B",
+      "amount": "$57.8M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "amount": "$57.8M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series D",
+      "amount": "$400M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "stage": "Series B",
+      "amount": "$40M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "amount": "$57.8M",
+      "citations": [
+        4
+      ]
+    }
+  ],
+  "competitors": [
+    "companies like Hugging Face",
+    "Flower",
+    "Outerbounds",
+    "INC",
+    "Hugging Face",
+    "Paris (France)",
+    "Addition",
+    "32 others 77/100 2nd Replicate 2018",
+    "Berkeley (United States)"
+  ],
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Replicate",
+      "title": "Replicate - Wikipedia",
+      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "kind": "wikipedia"
+    },
+    {
+      "url": "https://replicate.com/",
+      "title": "Replicate - Run AI with an API",
+      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://replicate.com/about",
+      "title": "About & Careers – Replicate",
+      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://replicatebioscience.com/",
+      "title": "Home | Replicate Bioscience",
+      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://tracxn.com/d/companies/replicate/__Qr-NSRJC92HIM9FKl3jqQVrZWfOxyd7X3Ui9LkIfspQ",
+      "title": "Replicate - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "kind": "homepage"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-06-26T22:42:43.800Z",
+    "generator": "heuristic",
+    "confidence": "low",
+    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+  }
+}
