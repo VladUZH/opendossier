@@ -14,8 +14,24 @@ import { z } from 'zod';
 export const SourceKindSchema = z.enum(['homepage', 'wikipedia', 'search', 'other']);
 export type SourceKind = z.infer<typeof SourceKindSchema>;
 
+/**
+ * A slug is URL-safe AND path-safe: lowercase alphanumerics in hyphen-separated words,
+ * with no slashes, dots, spaces, or `..`. This exactly matches `slugify()`'s output, and —
+ * because a slug becomes a filename in the corpus (`<slug>.json`) — enforcing it here is what
+ * stops path traversal from an untrusted profile (e.g. a crafted `/api/save` body).
+ */
+export const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+export function isValidSlug(slug: string): boolean {
+  return SLUG_PATTERN.test(slug);
+}
+
 export const SourceSchema = z.object({
-  url: z.string().url(),
+  // Restrict to http(s): a dossier source is something we fetched over the web, and this
+  // keeps javascript:/data:/file: URLs out of stored profiles and rendered links.
+  url: z
+    .string()
+    .url()
+    .refine((u) => /^https?:\/\//i.test(u), 'source url must be http(s)'),
   title: z.string(),
   fetchedAt: z.string().datetime(),
   kind: SourceKindSchema,
@@ -53,7 +69,12 @@ export const ProfileMetaSchema = z.object({
 
 export const CompanyProfileSchema = z
   .object({
-    slug: z.string().min(1),
+    slug: z
+      .string()
+      .regex(
+        SLUG_PATTERN,
+        'slug must be lowercase alphanumeric words separated by single hyphens (no slashes, dots, or spaces)',
+      ),
     name: z.string().min(1),
     domain: z.string().optional(),
     tagline: z.string().optional(),
@@ -93,12 +114,19 @@ export function parseProfile(data: unknown): CompanyProfile {
   return CompanyProfileSchema.parse(data);
 }
 
-/** Turn a company name into a stable, URL-safe slug. */
+/** Turn a company name into a stable, URL-safe, path-safe slug (matches SLUG_PATTERN). */
 export function slugify(name: string): string {
-  return name
+  const base = name
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '') // strip diacritics
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+  if (base) return base;
+  // Names with no ASCII alphanumerics (CJK, Cyrillic, emoji, symbols) would otherwise
+  // slugify to '' and crash the pipeline at parseProfile. Fall back to a deterministic
+  // short id so every non-empty name yields a stable, schema-valid slug.
+  let h = 5381;
+  for (let i = 0; i < name.length; i++) h = (Math.imul(h, 33) + name.charCodeAt(i)) >>> 0;
+  return `co-${h.toString(36)}`;
 }

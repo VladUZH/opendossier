@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, rm, writeFile, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Corpus } from './corpus.js';
@@ -67,11 +67,46 @@ describe('Corpus', () => {
     expect(await corpus.search('nothingmatches')).toEqual([]);
   });
 
+  it('refuses to save a profile whose slug escapes the corpus directory', async () => {
+    const evil = makeProfile('Evil', '../escape');
+    await expect(corpus.save(evil)).rejects.toThrow(/slug/i);
+    // …and nothing was written one level up, outside companies/
+    await expect(access(join(dir, 'escape.json'))).rejects.toThrow();
+  });
+
+  it('does not read JSON files outside the corpus via a traversing slug', async () => {
+    // Plant a valid profile one level above companies/ — a `../secret` slug would reach it.
+    await writeFile(join(dir, 'secret.json'), JSON.stringify(makeProfile('Secret', 'secret')), 'utf8');
+    expect(await corpus.load('../secret')).toBeNull();
+    expect(await corpus.load('../../../../etc/hostname')).toBeNull();
+  });
+
   it('overwrites an existing profile on re-save', async () => {
     await corpus.save(makeProfile('Acme', 'acme', 'old'));
     await corpus.save(makeProfile('Acme', 'acme', 'new summary'));
     const loaded = await corpus.load('acme');
     expect(loaded?.summary).toBe('new summary');
     expect((await corpus.list())).toHaveLength(1);
+  });
+
+  it('skips a single malformed/invalid .json file instead of breaking the whole listing', async () => {
+    await corpus.save(makeProfile('Good', 'good'));
+    await writeFile(join(dir, 'companies', 'broken.json'), '{ not valid json', 'utf8');
+    await writeFile(join(dir, 'companies', 'invalid.json'), '{}', 'utf8');
+    expect((await corpus.list()).map((s) => s.slug)).toEqual(['good']);
+    expect((await corpus.search('good')).map((s) => s.slug)).toEqual(['good']);
+  });
+
+  it('treats a whitespace-only search query as "list all"', async () => {
+    await corpus.save(makeProfile('A', 'a'));
+    await corpus.save(makeProfile('B', 'b'));
+    expect((await corpus.search('   ')).map((s) => s.slug)).toEqual(['a', 'b']);
+    expect((await corpus.search('\t\n')).map((s) => s.slug)).toEqual(['a', 'b']);
+  });
+
+  it('sorts the listing case-insensitively', async () => {
+    await corpus.save(makeProfile('Banana', 'banana'));
+    await corpus.save(makeProfile('apple', 'apple'));
+    expect((await corpus.list()).map((s) => s.name)).toEqual(['apple', 'Banana']);
   });
 });

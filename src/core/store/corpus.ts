@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { parseProfile, type CompanyProfile } from '../schema/profile.js';
+import { parseProfile, isValidSlug, type CompanyProfile } from '../schema/profile.js';
 
 /** A lightweight summary for directory/search listings (no need to ship the whole profile). */
 export interface ProfileSummary {
@@ -40,6 +40,9 @@ export class Corpus {
   }
 
   private file(slug: string): string {
+    // Defense in depth: never let a slug become a traversing path, even if it reached
+    // here without going through schema validation.
+    if (!isValidSlug(slug)) throw new Error(`invalid slug "${slug}": refusing path traversal`);
     return join(this.companiesDir, `${slug}.json`);
   }
 
@@ -50,6 +53,9 @@ export class Corpus {
   }
 
   async load(slug: string): Promise<CompanyProfile | null> {
+    // An unsafe slug can never name a corpus file: treat it as "not found" and, crucially,
+    // never touch the filesystem with it (this is the read-side path-traversal guard).
+    if (!isValidSlug(slug)) return null;
     let raw: string;
     try {
       raw = await readFile(this.file(slug), 'utf8');
@@ -69,7 +75,9 @@ export class Corpus {
       throw err;
     }
     const slugs = entries.filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
-    const profiles = await Promise.all(slugs.map((s) => this.load(s)));
+    // One corrupt or schema-invalid file must not take down the whole directory:
+    // skip anything that fails to read/parse rather than rejecting the listing.
+    const profiles = await Promise.all(slugs.map((s) => this.load(s).catch(() => null)));
     return profiles.filter((p): p is CompanyProfile => p !== null);
   }
 

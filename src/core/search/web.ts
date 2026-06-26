@@ -3,22 +3,84 @@ import type { SourceKind } from '../schema/profile.js';
 import type { FetchedPage, SearchHit, SourceGatherer } from './types.js';
 
 const MAX_PAGE_CHARS = 8000;
+const MAX_REDIRECTS = 5;
 const DEFAULT_UA = 'OpenDossier/0.1 (+https://github.com/VladUZH/opendossier)';
 
 export type HttpGet = (url: string) => Promise<string>;
 
+function isPrivateIPv4(host: string): boolean {
+  const m = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (!m) return false;
+  const a = Number(m[1]);
+  const b = Number(m[2]);
+  return (
+    a === 0 || // 0.0.0.0/8
+    a === 10 || // private
+    a === 127 || // loopback
+    (a === 169 && b === 254) || // link-local + cloud metadata (169.254.169.254)
+    (a === 172 && b >= 16 && b <= 31) || // private
+    (a === 192 && b === 168) || // private
+    (a === 100 && b >= 64 && b <= 127) // CGNAT
+  );
+}
+
+/**
+ * SSRF guard. The pipeline fetches URLs discovered from web search results, which an
+ * attacker can influence; without this an internal/cloud-metadata address (e.g.
+ * 169.254.169.254) or a `file:`/`gopher:` URL could be fetched. Returns the parsed URL
+ * for non-internal http(s) targets and throws otherwise. Applied to the initial URL and,
+ * crucially, re-applied to every redirect hop. (DNS-rebinding is out of scope for a
+ * no-dependency tool; this blocks literal internal hostnames, IP-literals, and bad schemes.)
+ */
+export function assertFetchableUrl(raw: string): URL {
+  let u: URL;
+  try {
+    u = new URL(raw);
+  } catch {
+    throw new Error(`invalid URL: ${raw}`);
+  }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') {
+    throw new Error(`refusing non-http(s) URL: ${raw}`);
+  }
+  const host = u.hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  const blocked = host.includes(':')
+    ? host === '::1' ||
+      host === '::' ||
+      host.startsWith('fc') ||
+      host.startsWith('fd') ||
+      host.startsWith('fe80') // IPv6 loopback / unique-local / link-local
+    : host === 'localhost' ||
+      host.endsWith('.localhost') ||
+      host.endsWith('.internal') ||
+      host === 'metadata.google.internal' ||
+      isPrivateIPv4(host);
+  if (blocked) throw new Error(`refusing to fetch internal/loopback address: ${host}`);
+  return u;
+}
+
 async function defaultHttpGet(url: string, userAgent: string): Promise<string> {
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': userAgent,
-      accept: 'text/html,application/json',
-      'accept-language': 'en-US,en;q=0.9',
-    },
-    redirect: 'follow',
-    signal: AbortSignal.timeout(15000),
-  });
-  if (!res.ok) throw new Error(`GET ${url} -> ${res.status}`);
-  return res.text();
+  let current = assertFetchableUrl(url).toString();
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const res = await fetch(current, {
+      headers: {
+        'user-agent': userAgent,
+        accept: 'text/html,application/json',
+        'accept-language': 'en-US,en;q=0.9',
+      },
+      // Follow redirects manually so each hop is re-checked by the SSRF guard — a 30x to
+      // an internal address would otherwise bypass the initial check.
+      redirect: 'manual',
+      signal: AbortSignal.timeout(15000),
+    });
+    const location = res.status >= 300 && res.status < 400 ? res.headers.get('location') : null;
+    if (location) {
+      current = assertFetchableUrl(new URL(location, current).toString()).toString();
+      continue;
+    }
+    if (!res.ok) throw new Error(`GET ${url} -> ${res.status}`);
+    return res.text();
+  }
+  throw new Error(`too many redirects fetching ${url}`);
 }
 
 /** Strip scripts/nav/chrome from an HTML page and return its title + readable text. */
@@ -47,7 +109,9 @@ function decodeDdgHref(href: string): string {
   try {
     const u = new URL(href, 'https://duckduckgo.com');
     const uddg = u.searchParams.get('uddg');
-    if (uddg) return decodeURIComponent(uddg);
+    // searchParams.get() already percent-decodes once; decoding again corrupts URLs that
+    // contain encoded characters and throws (leaking the DDG wrapper) on a literal '%'.
+    if (uddg) return uddg;
   } catch {
     /* fall through */
   }
@@ -111,7 +175,8 @@ export class WebGatherer implements SourceGatherer {
       );
       const data = JSON.parse(raw);
       const url = data?.[3]?.[0];
-      if (typeof url === 'string') {
+      // Apply the same scheme gate the DDG path enforces — never surface a non-http(s) URL.
+      if (typeof url === 'string' && /^https?:\/\//.test(url)) {
         hits.unshift({ url, title: data?.[1]?.[0] ?? 'Wikipedia', snippet: data?.[2]?.[0] ?? '' });
       }
     } catch {
@@ -123,11 +188,12 @@ export class WebGatherer implements SourceGatherer {
   }
 
   async fetch(url: string): Promise<FetchedPage> {
+    assertFetchableUrl(url); // SSRF guard before the transport is ever touched
     const html = await this.httpGet(url);
     const { title, text } = extractText(html);
     return {
       url,
-      title: title || url,
+      title: (title || url).slice(0, MAX_PAGE_CHARS), // bound the title like the body
       text: text.slice(0, MAX_PAGE_CHARS),
       kind: kindFor(url),
     };

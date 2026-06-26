@@ -2,8 +2,10 @@ import { join } from 'node:path';
 import { WebGatherer } from './search/web.js';
 import type { SourceGatherer, SearchHit, FetchedPage } from './search/types.js';
 
+type Env = Record<string, string | undefined>;
+
 /** Root directory of the dossier corpus (contains `companies/`). */
-export function dataDir(env: NodeJS.ProcessEnv = process.env): string {
+export function dataDir(env: Env = process.env): string {
   return env.OPENDOSSIER_DATA_DIR || join(process.cwd(), 'data');
 }
 
@@ -17,7 +19,8 @@ class NullGatherer implements SourceGatherer {
   }
 }
 
-export function getGatherer(env: NodeJS.ProcessEnv = process.env): SourceGatherer {
-  if ((env.SEARCH_PROVIDER || 'duckduckgo').toLowerCase() === 'none') return new NullGatherer();
+export function getGatherer(env: Env = process.env): SourceGatherer {
+  // trim() so the kill-switch doesn't fail open on a stray space/newline ("none ").
+  if ((env.SEARCH_PROVIDER || 'duckduckgo').trim().toLowerCase() === 'none') return new NullGatherer();
   return new WebGatherer();
 }
