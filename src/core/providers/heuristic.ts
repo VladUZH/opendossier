@@ -55,7 +55,10 @@ function extractFunding(docs: EvidenceDoc[]): FundingRound[] {
     for (const s of sentences(docs[i].text)) {
       const amount = s.match(amountRe);
       if (!amount) continue;
-      if (!/\b(rais(e|ed|ing)|funding|round|investment|valuation|backed)\b/i.test(s)) continue;
+      // Require an actual raise verb or funding stage — not loose words like
+      // "backed" or "valued", which match market-cap/valuation sentences too.
+      if (!/\b(rais(e|ed|ing)|series\s+[a-k]\b|pre-seed|seed round|venture round|funding round)\b/i.test(s))
+        continue;
       const stage = s.match(stageRe);
       const investor = s.match(investorRe);
       rounds.push({

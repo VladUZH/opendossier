@@ -71,6 +71,17 @@ describe('HeuristicProvider', () => {
     expect(d.competitors).toContain('Locus Robotics');
   });
 
+  it('does not treat a bare valuation/market-cap figure as a funding round', async () => {
+    const e = ev([
+      {
+        url: 'https://x.example',
+        text: 'The company is backed by major investors and is reportedly valued at $965 billion in 2026.',
+      },
+    ]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.funding).toHaveLength(0);
+  });
+
   it('marks confidence low and explains it ran without an LLM', async () => {
     const d = await new HeuristicProvider().synthesize(evidence);
     expect(d.confidence).toBe('low');

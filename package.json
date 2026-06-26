@@ -5,9 +5,6 @@
   "type": "module",
   "description": "Open-source, self-hostable AI company research — build a sourced dossier on any company. Bring your own LLM, no telemetry.",
   "license": "MIT",
-  "bin": {
-    "opendossier": "./bin/opendossier.mjs"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
