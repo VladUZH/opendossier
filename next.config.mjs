@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Self-contained server bundle for a small Docker image.
+  output: 'standalone',
   // The research engine reads/writes the file-based corpus at runtime via Node APIs.
   serverExternalPackages: ['node-html-parser'],
   webpack: (config) => {

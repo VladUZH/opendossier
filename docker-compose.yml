@@ -1,0 +1,17 @@
+services:
+  opendossier:
+    build: .
+    image: opendossier
+    ports:
+      - "3000:3000"
+    environment:
+      # Defaults to the zero-key heuristic engine. Override here or in .env.local.
+      LLM_PROVIDER: ${LLM_PROVIDER:-heuristic}
+    # Optional: drop your keys in .env.local (gitignored) to use an LLM.
+    env_file:
+      - path: .env.local
+        required: false
+    # Your dossier corpus persists on the host and stays human-readable.
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

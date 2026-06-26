@@ -43,6 +43,14 @@ npm run dev
 
 That's it — **no API key, no config, no database.** Browse the seeded directory of 15 companies, or type a new company into the search box and watch it research live.
 
+Prefer Docker?
+
+```bash
+docker compose up        # → http://localhost:3000
+```
+
+Your dossiers persist on the host in `./data` and stay human-readable. Add an LLM by dropping a key into `.env.local` (see below) — Compose picks it up automatically.
+
 Prefer the terminal?
 
 ```bash
