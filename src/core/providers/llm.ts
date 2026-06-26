@@ -74,9 +74,23 @@ function extractJson(raw: string): unknown {
   }
 }
 
+/** LLMs emit `null` for "no value"; our optional fields expect absence. Recursively
+ *  drop null object keys and null array elements so defaults/optionals apply cleanly. */
+function stripNulls(v: unknown): unknown {
+  if (Array.isArray(v)) return v.filter((x) => x !== null).map(stripNulls);
+  if (v && typeof v === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, val] of Object.entries(v)) {
+      if (val !== null) out[k] = stripNulls(val);
+    }
+    return out;
+  }
+  return v;
+}
+
 /** Parse + validate a model response into a ProfileDraft, dropping invalid citations. */
 export function parseDraftResponse(raw: string, docCount: number): ProfileDraft {
-  const parsed = DraftResponseSchema.parse(extractJson(raw));
+  const parsed = DraftResponseSchema.parse(stripNulls(extractJson(raw)));
   const clamp = (cites: number[]) => cites.filter((c) => c < docCount);
   return {
     ...parsed,

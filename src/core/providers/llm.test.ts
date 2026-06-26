@@ -66,6 +66,23 @@ describe('parseDraftResponse', () => {
     expect(d.confidence).toBe('medium');
   });
 
+  it('tolerates null for optional fields (LLMs emit null, not undefined)', () => {
+    const raw = JSON.stringify({
+      summary: 's',
+      tagline: null,
+      facts: [{ label: 'X', value: 'y', citations: [0] }],
+      funding: [{ stage: 'Seed', amount: '$2M', date: null, investors: null, citations: [0] }],
+      competitors: ['A', null],
+      swot: { strengths: null, weaknesses: [], opportunities: [], threats: [] },
+    });
+    const d = parseDraftResponse(raw, 1);
+    expect(d.tagline).toBeUndefined();
+    expect(d.funding[0].date).toBeUndefined();
+    expect(d.funding[0].amount).toBe('$2M');
+    expect(d.competitors).toEqual(['A']);
+    expect(d.swot?.strengths).toEqual([]);
+  });
+
   it('throws when no JSON object is present', () => {
     expect(() => parseDraftResponse('I cannot help with that.', 1)).toThrow();
   });
