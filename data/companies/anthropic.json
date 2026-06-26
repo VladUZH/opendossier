@@ -2,64 +2,156 @@
   "slug": "anthropic",
   "name": "Anthropic",
   "domain": "anthropic.com",
-  "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems. Skip to main content Skip to footer What 81,000 people want from AI The largest study ever done on AI and how it's shaping lives around the world.",
+  "tagline": "Building reliable, interpretable, and steerable AI systems.",
+  "summary": "Anthropic is an American artificial intelligence company focused on AI safety and research, founded in January 2021 by former OpenAI employees. The company aims to develop reliable and interpretable AI systems, with its flagship product being the Claude series of large language models. Anthropic operates as a Public Benefit Corporation and is dedicated to ensuring that AI technology benefits humanity while addressing potential risks.",
   "facts": [
     {
       "label": "Founded",
-      "value": "2021",
+      "value": "January 26, 2021",
       "citations": [
         0
       ]
     },
     {
       "label": "Headquarters",
-      "value": "San Francisco, California. It",
+      "value": "500 Howard Street, San Francisco, California, U.S.",
       "citations": [
         0
+      ]
+    },
+    {
+      "label": "Key People",
+      "value": "Dario Amodei (CEO), Daniela Amodei (President)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees",
+      "value": "2,500 (2026)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Ownership",
+      "value": "14% owned by Alphabet Inc.",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Valuation",
+      "value": "$965 billion (May 2026)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Products",
+      "value": "Claude, Claude Code, Claude Cowork, Claude Design",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Public Benefit Corporation",
+      "value": "Yes",
+      "citations": [
+        1
       ]
     }
   ],
   "funding": [
     {
-      "amount": "$965 billion",
+      "amount": "$124 million",
+      "date": "May 2021",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$15 billion",
+      "date": "November 2025",
+      "investors": [
+        "Nvidia",
+        "Microsoft"
+      ],
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$200 million",
+      "date": "December 2025",
+      "investors": [
+        "Snowflake Inc."
+      ],
+      "citations": [
+        0
+      ]
+    },
+    {
+      "amount": "$1.8 billion",
+      "date": "May 2026",
+      "investors": [
+        "Akamai Technologies"
+      ],
       "citations": [
         0
       ]
     }
   ],
   "competitors": [
-    "5 Alternatives to Watch Jun 26"
+    "OpenAI",
+    "Google DeepMind",
+    "Microsoft AI"
   ],
+  "swot": {
+    "strengths": [
+      "Strong focus on AI safety and reliability",
+      "Experienced founding team from OpenAI",
+      "Significant financial backing and partnerships"
+    ],
+    "weaknesses": [
+      "Relatively new company with limited market history",
+      "Dependence on external funding and partnerships"
+    ],
+    "opportunities": [
+      "Growing demand for AI safety solutions",
+      "Potential for public offering to raise capital",
+      "Expansion of product offerings and capabilities"
+    ],
+    "threats": [
+      "Intense competition in the AI sector",
+      "Regulatory challenges and scrutiny",
+      "National security concerns affecting partnerships"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Anthropic",
       "title": "Anthropic - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:10.371Z",
+      "fetchedAt": "2026-06-26T23:06:10.583Z",
       "kind": "wikipedia"
     },
     {
-      "url": "https://www.anthropic.com/",
-      "title": "Home \\ Anthropic",
-      "fetchedAt": "2026-06-26T22:42:10.371Z",
-      "kind": "homepage"
-    },
-    {
-      "url": "https://www.fool.com/investing/2026/06/26/if-anthropic-goes-public-at-1-trillion-or-more-thi/",
-      "title": "If Anthropic Goes Public at $1 Trillion Or More, This Company Could Be a Big Winner | The Motley Fool",
-      "fetchedAt": "2026-06-26T22:42:10.371Z",
+      "url": "https://www.anthropic.com/company",
+      "title": "Company \\ Anthropic",
+      "fetchedAt": "2026-06-26T23:06:10.583Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.forbes.com/companies/anthropic/",
       "title": "Anthropic | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:10.371Z",
+      "fetchedAt": "2026-06-26T23:06:10.583Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:10.371Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:06:10.583Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

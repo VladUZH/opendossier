@@ -2,40 +2,87 @@
   "slug": "railway",
   "name": "Railway",
   "domain": "railway.com",
-  "summary": "Railway is a full-stack cloud for deploying web apps, servers, databases, and more with automatic scaling, monitoring, and security. Agents week is coming to a close!",
-  "facts": [],
+  "tagline": "Ship software peacefully",
+  "summary": "Railway is a full-stack cloud platform designed for deploying web applications, servers, and databases with features like automatic scaling, monitoring, and security. It simplifies the deployment process, allowing developers to focus on building their products without the complexities of traditional cloud services.",
+  "facts": [
+    {
+      "label": "Service Type",
+      "value": "Full-stack cloud for deploying web apps, servers, and databases",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "label": "Key Features",
+      "value": "Automatic scaling, monitoring, and security",
+      "citations": [
+        3
+      ]
+    },
+    {
+      "label": "Developer Base",
+      "value": "Over 2 million developers using Railway",
+      "citations": [
+        3
+      ]
+    }
+  ],
   "funding": [],
-  "competitors": [],
+  "competitors": [
+    "Heroku",
+    "AWS",
+    "Google Cloud",
+    "Microsoft Azure"
+  ],
+  "swot": {
+    "strengths": [
+      "User-friendly deployment process",
+      "Automatic configuration and scaling",
+      "Strong developer community"
+    ],
+    "weaknesses": [
+      "Relatively new in the market",
+      "Limited brand recognition compared to larger competitors"
+    ],
+    "opportunities": [
+      "Growing demand for cloud services",
+      "Expansion into new markets and services"
+    ],
+    "threats": [
+      "Intense competition from established cloud providers",
+      "Rapid technological changes in cloud computing"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Railway",
       "title": "Rail transport - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:39.971Z",
+      "fetchedAt": "2026-06-26T23:09:41.334Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://en.wikipedia.org/wiki/List_of_railway_companies",
       "title": "List of railway companies - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:39.971Z",
+      "fetchedAt": "2026-06-26T23:09:41.334Z",
       "kind": "wikipedia"
     },
     {
-      "url": "https://en.wikipedia.org/wiki/Rail_transport_company",
-      "title": "Rail transport company - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:39.971Z",
+      "url": "https://en.wikipedia.org/wiki/List_of_U.S._Class_I_railroads",
+      "title": "List of U.S. Class I railroads - Wikipedia",
+      "fetchedAt": "2026-06-26T23:09:41.334Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://railway.com/",
       "title": "Railway | The all-in-one intelligent cloud provider",
-      "fetchedAt": "2026-06-26T22:42:39.971Z",
+      "fetchedAt": "2026-06-26T23:09:41.334Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:39.971Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:09:41.334Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

@@ -2,7 +2,8 @@
   "slug": "linear",
   "name": "Linear",
   "domain": "linear.app",
-  "summary": "Purpose-built for planning and building products with AI agents. The product development system for teams and agentsThe product development system for teams and agentsThe product development system for teams and agents Purpose-built for planning and building products.",
+  "tagline": "The product development system for teams and agents.",
+  "summary": "Linear is a software development tool designed to enhance product planning and building processes, leveraging AI to improve team workflows. Founded in 2019, it has quickly become the preferred choice for over 33,000 companies, including notable names like OpenAI and Coinbase. The platform focuses on providing a structured environment for teams and AI agents to collaborate effectively, aiming to restore clarity and momentum in product development.",
   "facts": [
     {
       "label": "Founded",
@@ -12,59 +13,97 @@
       ]
     },
     {
-      "label": "Employees",
-      "value": "269",
+      "label": "Number of Companies Using Linear",
+      "value": "33,000+",
       "citations": [
-        4
+        2
       ]
-    }
-  ],
-  "funding": [
+    },
     {
-      "stage": "Series C",
-      "amount": "$ 82.0M",
+      "label": "Headquarters",
+      "value": "San Francisco, California",
       "citations": [
         4
       ]
+    },
+    {
+      "label": "Team Size",
+      "value": "51-200 employees",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Key Features",
+      "value": "AI-powered workflows, issue tracking, project management",
+      "citations": [
+        1,
+        2
+      ]
     }
   ],
-  "competitors": [],
+  "funding": [],
+  "competitors": [
+    "Notion",
+    "Jira",
+    "Asana",
+    "Trello"
+  ],
+  "swot": {
+    "strengths": [
+      "Strong focus on AI integration",
+      "User-friendly interface",
+      "Rapid growth and adoption"
+    ],
+    "weaknesses": [
+      "Relatively new in the market",
+      "Limited brand recognition compared to established competitors"
+    ],
+    "opportunities": [
+      "Expansion into new markets",
+      "Increasing demand for AI-driven tools in software development"
+    ],
+    "threats": [
+      "Intense competition from established project management tools",
+      "Rapid technological changes in software development"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Linear",
       "title": "Linearity - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:16.291Z",
+      "fetchedAt": "2026-06-26T23:07:12.876Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://linear.app/",
       "title": "Linear – The system for product development",
-      "fetchedAt": "2026-06-26T22:42:16.291Z",
+      "fetchedAt": "2026-06-26T23:07:12.876Z",
       "kind": "homepage"
     },
     {
       "url": "https://linear.app/about",
       "title": "About – Linear",
-      "fetchedAt": "2026-06-26T22:42:16.291Z",
+      "fetchedAt": "2026-06-26T23:07:12.876Z",
       "kind": "homepage"
     },
     {
       "url": "https://linear-solutions.com/",
       "title": "Nice/Linear | Professional Access Control Company",
-      "fetchedAt": "2026-06-26T22:42:16.291Z",
+      "fetchedAt": "2026-06-26T23:07:12.876Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.linkedin.com/company/linearapp",
       "title": "Linear | LinkedIn",
-      "fetchedAt": "2026-06-26T22:42:16.291Z",
+      "fetchedAt": "2026-06-26T23:07:12.876Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:16.291Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:07:12.876Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

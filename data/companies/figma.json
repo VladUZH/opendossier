@@ -2,7 +2,8 @@
   "slug": "figma",
   "name": "Figma",
   "domain": "figma.com",
-  "summary": "Figma is the leading collaborative design platform for building meaningful products. Design, prototype, and build products faster—while gathering feedback all in one place.",
+  "tagline": "The leading collaborative design platform for building meaningful products.",
+  "summary": "Figma is a public software company based in San Francisco, founded in 2012 by Dylan Field and Evan Wallace. It provides a collaborative platform for interface design, prototyping, and development handoff, emphasizing real-time collaboration and user experience design. Figma's product suite includes tools for design, prototyping, and AI-powered features, making it a preferred choice for many organizations, including 95% of the Fortune 500.",
   "facts": [
     {
       "label": "Founded",
@@ -13,14 +14,84 @@
     },
     {
       "label": "Headquarters",
-      "value": "San Francisco",
+      "value": "San Francisco, California, United States",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Revenue (2025)",
+      "value": "$1.06 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Operating Income (2025)",
+      "value": "$–1.29 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Net Income (2025)",
+      "value": "$–1.25 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Total Assets (2025)",
+      "value": "$2.35 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Total Equity (2025)",
+      "value": "$1.51 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees (2025)",
+      "value": "1,886",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Public Listing",
+      "value": "Listed on NYSE as FIG",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Funding Raised",
+      "value": "$749 million",
       "citations": [
         4
       ]
     },
     {
-      "label": "Employees",
-      "value": "2,877",
+      "label": "Latest Funding Round",
+      "value": "Series F",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Latest Funding Amount",
+      "value": "$416 million",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Competitors",
+      "value": "Miro, Lucid, Lucidchart",
       "citations": [
         4
       ]
@@ -28,92 +99,129 @@
   ],
   "funding": [
     {
-      "amount": "$749M",
-      "citations": [
-        4
-      ]
-    },
-    {
       "stage": "Series F",
-      "amount": "$749M",
+      "amount": "$416 million",
+      "date": "May 15, 2024",
+      "investors": [
+        "Coatue",
+        "Alkeon Capital Management",
+        "General Catalyst",
+        "SurgoCap Partners",
+        "Atlassian",
+        "Fidelity Investments",
+        "Franklin Venture Partners",
+        "Iconiq Capital",
+        "Sequoia Capital",
+        "Thrive Capital",
+        "Greenoaks",
+        "Durable Capital Partners",
+        "Andreessen Horowitz",
+        "Kleiner Perkins",
+        "Goanna Capital"
+      ],
       "citations": [
         4
       ]
     },
     {
-      "stage": "Ipo",
-      "amount": "$749M",
+      "stage": "Series E",
+      "amount": "$200 million",
+      "date": "June 23, 2021",
+      "investors": [
+        "Durable Capital Partners",
+        "Morgan Stanley",
+        "Andreessen Horowitz",
+        "Sequoia Capital",
+        "Index Ventures",
+        "Kleiner Perkins",
+        "Greylock Partners",
+        "Flat Capital"
+      ],
       "citations": [
         4
       ]
     },
     {
-      "stage": "Series F",
-      "amount": "$416M",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "stage": "Series F",
-      "amount": "$416M",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "stage": "Series C",
-      "amount": "$476M",
+      "stage": "Series D",
+      "amount": "$50 million",
+      "date": "April 29, 2020",
+      "investors": [
+        "Peter Levine",
+        "Marc Andreessen",
+        "Andreessen Horowitz",
+        "Index Ventures",
+        "Greylock Partners",
+        "Kleiner Perkins",
+        "Henry Ellenbogen",
+        "Sequoia Capital",
+        "Founders Fund",
+        "Durable Capital Partners"
+      ],
       "citations": [
         4
       ]
     }
   ],
   "competitors": [
-    "companies like Miro",
-    "Lucid",
-    "Lucidchart",
-    "Inc",
     "Miro",
-    "San Francisco (United States)",
-    "Fidelity Investments"
+    "Lucid",
+    "Lucidchart"
   ],
+  "swot": {
+    "strengths": [
+      "Strong brand recognition with 95% of Fortune 500 using Figma",
+      "Robust collaborative features for design and prototyping",
+      "Diverse product offerings including Figma Sites and FigJam"
+    ],
+    "weaknesses": [
+      "High operating losses reported in recent years",
+      "Dependence on continuous innovation to stay competitive"
+    ],
+    "opportunities": [
+      "Expansion of AI-powered tools and features",
+      "Growing demand for collaborative design tools in remote work environments"
+    ],
+    "threats": [
+      "Intense competition from other design platforms",
+      "Potential regulatory challenges following acquisition attempts"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Figma",
       "title": "Figma - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "fetchedAt": "2026-06-26T23:08:29.375Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.figma.com/",
       "title": "Figma: The Collaborative Interface Design Tool",
-      "fetchedAt": "2026-06-26T22:42:23.932Z",
-      "kind": "homepage"
-    },
-    {
-      "url": "https://investor.figma.com/overview/default.aspx",
-      "title": "Investor Relations | Figma, Inc.",
-      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "fetchedAt": "2026-06-26T23:08:29.375Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.forbes.com/companies/figma/",
       "title": "Figma | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "fetchedAt": "2026-06-26T23:08:29.375Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://investor.figma.com/overview/default.aspx",
+      "title": "Investor Relations | Figma, Inc.",
+      "fetchedAt": "2026-06-26T23:08:29.375Z",
       "kind": "homepage"
     },
     {
       "url": "https://tracxn.com/d/companies/figma/__ax4OtPOcmyjsFUT81_oGsjztypgqH8K3cQ0_zcUnNBo",
       "title": "Figma - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
-      "fetchedAt": "2026-06-26T22:42:23.932Z",
+      "fetchedAt": "2026-06-26T23:08:29.375Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:23.932Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:08:29.375Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

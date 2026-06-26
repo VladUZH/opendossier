@@ -2,80 +2,131 @@
   "slug": "perplexity-ai",
   "name": "Perplexity AI",
   "domain": "forbes.com",
-  "summary": "Perplexity wants to make search engines without AI a thing of the past. Cofounded by Aravind Srinivas, Johnny Ho, Denis Yarats and Andy Konwinski in 2022, it uses a medley of AI models to answer users’ questions on a wide range of topics, which it backs up with footnoted sources.",
+  "tagline": "Revolutionizing search with AI-driven answers.",
+  "summary": "Perplexity AI, founded in August 2022, is an American artificial intelligence company that offers a web search engine utilizing large language models to provide synthesized responses to user queries. The company has rapidly grown, processing millions of queries daily and attracting significant investment, while also facing legal challenges regarding content usage.",
   "facts": [
     {
       "label": "Founded",
-      "value": "2022",
+      "value": "August 2022",
       "citations": [
-        2
+        0
+      ]
+    },
+    {
+      "label": "Headquarters",
+      "value": "San Francisco, California, U.S.",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees",
+      "value": "52 (2024)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Valuation (2025)",
+      "value": "$20 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Daily Queries Processed (May 2025)",
+      "value": "30 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Funding Raised (April 2024)",
+      "value": "$165 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Funding Raised (June 2025)",
+      "value": "$500 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Legal Challenges",
+      "value": "Faced allegations of copyright infringement and unauthorized content use from major media organizations.",
+      "citations": [
+        0
       ]
     }
   ],
   "funding": [
     {
-      "amount": "$20 billion",
+      "amount": "$165 million",
+      "date": "April 2024",
+      "investors": [
+        "Jeff Bezos",
+        "Tobias Lütke",
+        "Nat Friedman",
+        "Nvidia",
+        "Databricks"
+      ],
       "citations": [
         0
       ]
     },
     {
-      "stage": "Series E",
-      "amount": "$34.5 billion",
+      "amount": "$500 million",
+      "date": "June 2025",
       "citations": [
         0
-      ]
-    },
-    {
-      "amount": "$200 million",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "amount": "$200M",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "amount": "$170",
-      "citations": [
-        2
       ]
     }
   ],
-  "competitors": [],
+  "competitors": [
+    "Google",
+    "Bing",
+    "DuckDuckGo"
+  ],
+  "swot": {
+    "strengths": [
+      "Innovative use of AI in search technology",
+      "Rapid growth in user base",
+      "Strong backing from notable investors"
+    ],
+    "weaknesses": [
+      "Legal challenges regarding content usage",
+      "Dependence on AI models which may face scrutiny"
+    ],
+    "opportunities": [
+      "Expansion of product offerings",
+      "Potential partnerships with other tech companies"
+    ],
+    "threats": [
+      "Intense competition from established search engines",
+      "Regulatory challenges in AI and data usage"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Perplexity_AI",
       "title": "Perplexity AI - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "fetchedAt": "2026-06-26T23:09:46.795Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.forbes.com/companies/perplexity/",
       "title": "Perplexity | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:41.146Z",
-      "kind": "homepage"
-    },
-    {
-      "url": "https://techfundingnews.com/perplexity-raises-200m-at-20b-valuation-ai-search/",
-      "title": "Perplexity AI scores $200M at $20B valuation, amid growing competition in AI Search — TFN",
-      "fetchedAt": "2026-06-26T22:42:41.146Z",
-      "kind": "homepage"
-    },
-    {
-      "url": "https://techstartups.com/2026/04/08/perplexity-revenue-surges-50-as-ai-startup-shifts-from-search-to-autonomous-ai-agents/",
-      "title": "Perplexity revenue surges 50% as AI startup shifts from search to autonomous AI agents - Tech Startups",
-      "fetchedAt": "2026-06-26T22:42:41.146Z",
+      "fetchedAt": "2026-06-26T23:09:46.795Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:41.146Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:09:46.795Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

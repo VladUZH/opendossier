@@ -2,7 +2,8 @@
   "slug": "hugging-face",
   "name": "Hugging Face",
   "domain": "huggingface.co",
-  "summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science. The AI community building the future.",
+  "tagline": "Advancing and democratizing artificial intelligence through open source and open science.",
+  "summary": "Hugging Face, Inc. is an American company founded in 2016, based in New York City, that specializes in developing tools and platforms for machine learning and artificial intelligence. Initially starting as a chatbot app, the company pivoted to focus on open-source machine learning models and datasets, becoming a key player in the AI community with its popular Transformers library and collaborative platform.",
   "facts": [
     {
       "label": "Founded",
@@ -13,50 +14,147 @@
     },
     {
       "label": "Headquarters",
-      "value": "New York City",
+      "value": "Manhattan, New York City",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Revenue",
+      "value": "$15 million (2022)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees",
+      "value": "250 (2025)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Valuation",
+      "value": "$4.5 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Key People",
+      "value": "Clément Delangue (CEO), Julien Chaumond (CTO), Thomas Wolf (CSO)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Partnership with AWS",
+      "value": "Announced in February 2023 to provide Hugging Face products to AWS customers.",
+      "citations": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "label": "BLOOM Model",
+      "value": "A multilingual large language model with 176 billion parameters announced in 2022.",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "AI Accelerator Program",
+      "value": "Launched in June 2024 with Meta and Scaleway to support European startups.",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Acquisition of Pollen Robotics",
+      "value": "Acquired in April 2025, a humanoid robotics startup.",
       "citations": [
         0
       ]
     }
   ],
-  "funding": [],
-  "competitors": [],
+  "funding": [
+    {
+      "stage": "Series D",
+      "amount": "Not disclosed",
+      "date": "2023",
+      "investors": [
+        "IBM"
+      ],
+      "citations": [
+        3
+      ]
+    }
+  ],
+  "competitors": [
+    "OpenAI",
+    "Google AI",
+    "Microsoft AI",
+    "NVIDIA"
+  ],
+  "swot": {
+    "strengths": [
+      "Strong open-source community",
+      "Wide range of pre-trained models",
+      "User-friendly tools and documentation",
+      "Partnerships with major tech companies"
+    ],
+    "weaknesses": [
+      "Dependence on open-source contributions",
+      "Potential security vulnerabilities"
+    ],
+    "opportunities": [
+      "Expansion into new markets",
+      "Growing demand for AI solutions",
+      "Collaboration with educational institutions"
+    ],
+    "threats": [
+      "Intense competition in AI space",
+      "Cybersecurity threats",
+      "Regulatory challenges in AI development"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Hugging_Face",
       "title": "Hugging Face - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "fetchedAt": "2026-06-26T23:08:03.415Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://huggingface.co/",
       "title": "Hugging Face – The AI community building the future.",
-      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "fetchedAt": "2026-06-26T23:08:03.415Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.forbes.com/companies/hugging-face/",
       "title": "Hugging Face | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "fetchedAt": "2026-06-26T23:08:03.415Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.ibm.com/think/topics/hugging-face",
       "title": "What is Hugging Face? | IBM",
-      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "fetchedAt": "2026-06-26T23:08:03.415Z",
       "kind": "homepage"
     },
     {
       "url": "https://huggingface.co/organizations",
       "title": "Organizations - Hugging Face",
-      "fetchedAt": "2026-06-26T22:42:19.777Z",
+      "fetchedAt": "2026-06-26T23:08:03.415Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:19.777Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:08:03.415Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

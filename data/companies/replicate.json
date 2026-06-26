@@ -2,7 +2,8 @@
   "slug": "replicate",
   "name": "Replicate",
   "domain": "replicate.com",
-  "summary": "Run open-source machine learning models with a cloud API Try HappyHorse 1.1 from Alibaba Run AI with an API. Run and fine-tune models.",
+  "tagline": "Bringing AI to every software developer.",
+  "summary": "Replicate is a cloud-based open-source platform that enables software developers to run and fine-tune machine learning models with ease. Founded in 2018 and based in Berkeley, California, Replicate aims to simplify the use of AI in software development, allowing users to deploy models as easily as importing a package.",
   "facts": [
     {
       "label": "Founded",
@@ -12,14 +13,42 @@
       ]
     },
     {
-      "label": "Headquarters",
-      "value": "Berkeley",
+      "label": "Location",
+      "value": "Berkeley, United States",
       "citations": [
         4
       ]
     },
     {
-      "label": "Employees",
+      "label": "Total Funding",
+      "value": "$57.8M",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Latest Funding Round",
+      "value": "Series B",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Latest Funding Date",
+      "value": "June 28, 2023",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Acquisition",
+      "value": "Acquired by CloudFlare on November 18, 2025",
+      "citations": [
+        4
+      ]
+    },
+    {
+      "label": "Employee Count",
       "value": "26",
       "citations": [
         4
@@ -28,92 +57,89 @@
   ],
   "funding": [
     {
-      "amount": "$57.8M",
-      "citations": [
-        4
-      ]
-    },
-    {
       "stage": "Series B",
-      "amount": "$57.8M",
+      "amount": "$8,302,701",
+      "date": "June 28, 2023",
+      "investors": [
+        "Andreessen Horowitz",
+        "Y Combinator",
+        "Sequoia Capital"
+      ],
       "citations": [
         4
       ]
     },
     {
-      "amount": "$57.8M",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "stage": "Series D",
-      "amount": "$400M",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "stage": "Series B",
-      "amount": "$40M",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "amount": "$57.8M",
+      "stage": "Series A",
+      "amount": "$6,216,286",
+      "date": "February 21, 2023",
+      "investors": [
+        "Andreessen Horowitz"
+      ],
       "citations": [
         4
       ]
     }
   ],
   "competitors": [
-    "companies like Hugging Face",
-    "Flower",
-    "Outerbounds",
-    "INC",
     "Hugging Face",
-    "Paris (France)",
-    "Addition",
-    "32 others 77/100 2nd Replicate 2018",
-    "Berkeley (United States)"
+    "Flower",
+    "Outerbounds"
   ],
+  "swot": {
+    "strengths": [
+      "User-friendly platform for deploying machine learning models",
+      "Strong backing from notable investors"
+    ],
+    "weaknesses": [
+      "Relatively small team size",
+      "Recent acquisition may lead to integration challenges"
+    ],
+    "opportunities": [
+      "Growing demand for AI tools in software development",
+      "Potential for expansion into new markets"
+    ],
+    "threats": [
+      "Intense competition in the AI and machine learning space",
+      "Rapid technological changes may outpace current offerings"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Replicate",
       "title": "Replicate - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "fetchedAt": "2026-06-26T23:09:57.544Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://replicate.com/",
       "title": "Replicate - Run AI with an API",
-      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "fetchedAt": "2026-06-26T23:09:57.544Z",
       "kind": "homepage"
     },
     {
       "url": "https://replicate.com/about",
       "title": "About & Careers – Replicate",
-      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "fetchedAt": "2026-06-26T23:09:57.544Z",
       "kind": "homepage"
     },
     {
       "url": "https://replicatebioscience.com/",
       "title": "Home | Replicate Bioscience",
-      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "fetchedAt": "2026-06-26T23:09:57.544Z",
       "kind": "homepage"
     },
     {
       "url": "https://tracxn.com/d/companies/replicate/__Qr-NSRJC92HIM9FKl3jqQVrZWfOxyd7X3Ui9LkIfspQ",
       "title": "Replicate - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
-      "fetchedAt": "2026-06-26T22:42:43.800Z",
+      "fetchedAt": "2026-06-26T23:09:57.544Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:43.800Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:09:57.544Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

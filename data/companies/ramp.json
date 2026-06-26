@@ -2,11 +2,68 @@
   "slug": "ramp",
   "name": "Ramp",
   "domain": "ramp.com",
-  "summary": "# Ramp — Machine Version **Quick links:** [Docs](https://docs.ramp.com/) · [Help Center](https://support.ramp.com/) · [Integrations](https://ramp.com/integrations) · [Pricing](https://ramp.com/pricing) · [Trust Center](https://trust.ramp.com/) --- ## Ramp Promotional Offer Ramp is currently offering a $3,100 signup bon",
+  "tagline": "The all-in-one spend management platform for modern finance teams.",
+  "summary": "Ramp is a financial technology company that provides an integrated platform for corporate expense management, including corporate cards, expense tracking, accounts payable, travel, and procurement. Founded in 2019, Ramp aims to automate finance operations and improve efficiency for businesses, helping them save time and money.",
   "facts": [
     {
+      "label": "Founded",
+      "value": "March 2019",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Founders",
+      "value": "Eric Glyman, Karim Atiyeh, Gene Lee",
+      "citations": [
+        2
+      ]
+    },
+    {
       "label": "Headquarters",
-      "value": "New York City",
+      "value": "New York City, United States",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Valuation (2025)",
+      "value": "$32 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Annual Revenue (2025)",
+      "value": "$1 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Number of Employees (2025)",
+      "value": "1,200",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Customers",
+      "value": "70,000+ businesses",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "label": "Hours Saved by Customers",
+      "value": "27 million+ hours",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "label": "Funding Rounds",
+      "value": "Raised $300 million in Series D in August 2023",
       "citations": [
         2
       ]
@@ -16,6 +73,7 @@
     {
       "stage": "Series A",
       "amount": "$15 million",
+      "date": "February 2020",
       "investors": [
         "Founders Fund"
       ],
@@ -25,7 +83,8 @@
     },
     {
       "stage": "Series B",
-      "amount": "$30 million",
+      "amount": "$115 million",
+      "date": "April 2021",
       "citations": [
         2
       ]
@@ -33,6 +92,7 @@
     {
       "stage": "Series C",
       "amount": "$300 million",
+      "date": "August 2021",
       "citations": [
         2
       ]
@@ -40,91 +100,89 @@
     {
       "stage": "Series D",
       "amount": "$300 million",
+      "date": "August 2023",
       "citations": [
         2
       ]
     },
     {
-      "amount": "$750 million",
-      "investors": [
-        "Lightspeed Venture Partners with new investors such as Bessemer Venture Partners"
-      ],
+      "stage": "Series D-2",
+      "amount": "$150 million",
+      "date": "June 2024",
       "citations": [
         2
       ]
     },
     {
-      "stage": "Series C",
-      "amount": "$3.9 Billion",
+      "stage": "Series E",
+      "amount": "$300 million",
+      "date": "July 2025",
       "citations": [
         2
-      ]
-    },
-    {
-      "stage": "Series D",
-      "amount": "$300m",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "amount": "$22.5 billion",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "amount": "$750 million",
-      "citations": [
-        4
-      ]
-    },
-    {
-      "amount": "$3 billion",
-      "citations": [
-        4
       ]
     }
   ],
   "competitors": [
-    "Brex"
+    "Brex",
+    "Divvy",
+    "Expensify",
+    "Airbase"
   ],
+  "swot": {
+    "strengths": [
+      "All-in-one platform for finance management",
+      "Strong customer base of 70,000+ businesses",
+      "Significant time savings for users"
+    ],
+    "weaknesses": [
+      "Relatively new player in a competitive market",
+      "Dependence on continuous innovation to maintain market position"
+    ],
+    "opportunities": [
+      "Expansion into new markets and services",
+      "Growing demand for automated finance solutions"
+    ],
+    "threats": [
+      "Intense competition from established financial service providers",
+      "Economic downturns affecting customer spending"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Ramp",
       "title": "Inclined plane - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "fetchedAt": "2026-06-26T23:09:05.725Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://ramp.com/",
       "title": "https://ramp.com/",
-      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "fetchedAt": "2026-06-26T23:09:05.725Z",
       "kind": "homepage"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Ramp_(company)",
       "title": "Ramp (company) - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "fetchedAt": "2026-06-26T23:09:05.725Z",
       "kind": "wikipedia"
+    },
+    {
+      "url": "https://ramp.com/about-us/",
+      "title": "About Us - Different By Design | Ramp",
+      "fetchedAt": "2026-06-26T23:09:05.725Z",
+      "kind": "homepage"
     },
     {
       "url": "https://www.forbes.com/companies/ramp/",
       "title": "Ramp | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:27.060Z",
-      "kind": "homepage"
-    },
-    {
-      "url": "https://techcrunch.com/2026/06/04/ramp-raises-750m-at-44b-valuation-as-investors-hunger-for-fintechs-with-an-ai-story/",
-      "title": "Ramp raises $750M at $44B valuation as investors hunger for fintechs with an AI story | TechCrunch",
-      "fetchedAt": "2026-06-26T22:42:27.060Z",
+      "fetchedAt": "2026-06-26T23:09:05.725Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:27.060Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:09:05.725Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

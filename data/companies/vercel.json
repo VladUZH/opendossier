@@ -2,7 +2,8 @@
   "slug": "vercel",
   "name": "Vercel",
   "domain": "vercel.com",
-  "summary": "The autonomous stack for every app and agent. Build agents on infrastructure that thinks like them Notion powers millions of agent conversations daily on Vercel.",
+  "tagline": "The autonomous stack for every app and agent.",
+  "summary": "Vercel Inc. is an American cloud application company founded in 2015, known for its development of the Next.js framework and providing cloud infrastructure and developer tools for building and maintaining high-performance websites and applications. The company has experienced significant growth and innovation, particularly in AI-driven development tools.",
   "facts": [
     {
       "label": "Founded",
@@ -12,159 +13,152 @@
       ]
     },
     {
-      "label": "Headquarters",
-      "value": "Covina",
+      "label": "Formerly Known As",
+      "value": "ZEIT",
       "citations": [
-        3
+        0
       ]
     },
     {
-      "label": "Employees",
-      "value": "915",
+      "label": "Headquarters",
+      "value": "San Francisco, California, U.S.",
       "citations": [
-        3
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees",
+      "value": "550 (2025)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Latest Funding Round",
+      "value": "Series F",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Funding Amount in Latest Round",
+      "value": "$300 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Valuation After Latest Round",
+      "value": "$9.3 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Key People",
+      "value": "Guillermo Rauch (CEO)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "AI Tools Released",
+      "value": "v0 and AI SDK",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Security Breach",
+      "value": "Disclosed on April 19, 2026",
+      "citations": [
+        0
       ]
     }
   ],
   "funding": [
     {
-      "stage": "Series F",
-      "amount": "$300 million",
+      "stage": "Series E",
+      "amount": "$250 million",
+      "date": "May 16, 2024",
       "investors": [
-        "Accel"
+        "Accel",
+        "CRV",
+        "Google Ventures"
       ],
       "citations": [
-        0
-      ]
-    },
-    {
-      "stage": "Series E",
-      "amount": "$250 m",
-      "citations": [
-        0
-      ]
-    },
-    {
-      "stage": "Series F",
-      "amount": "$9.3",
-      "citations": [
-        0
-      ]
-    },
-    {
-      "amount": "$21 million",
-      "citations": [
-        0
-      ]
-    },
-    {
-      "stage": "Series C",
-      "amount": "$102M",
-      "citations": [
-        0
-      ]
-    },
-    {
-      "amount": "$863M",
-      "citations": [
         3
       ]
     },
     {
       "stage": "Series F",
-      "amount": "$863M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "amount": "$863M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Series F",
-      "amount": "$300M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Series F",
-      "amount": "$300M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Series D",
-      "amount": "$212M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Series F",
-      "amount": "$863M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Series E",
-      "amount": "$614M",
-      "citations": [
-        3
-      ]
-    },
-    {
-      "stage": "Seed",
-      "amount": "$12M",
+      "amount": "$300 million",
+      "date": "September 30, 2025",
+      "investors": [
+        "Accel",
+        "GIC",
+        "BlackRock",
+        "Khosla Ventures"
+      ],
       "citations": [
         3
       ]
     }
   ],
   "competitors": [
-    "companies like Netlify",
-    "Gitlab",
-    "DigitalOcean",
     "Netlify",
-    "San Francisco (United States)",
-    "deployment $212M Kleiner Perkins",
-    "Bessemer Venture Partners"
+    "Gitlab",
+    "DigitalOcean"
   ],
+  "swot": {
+    "strengths": [
+      "Strong brand recognition in web development",
+      "Innovative AI-driven tools",
+      "Robust cloud infrastructure"
+    ],
+    "weaknesses": [
+      "Recent backlash over CEO's political meeting",
+      "Security breach affecting user trust"
+    ],
+    "opportunities": [
+      "Growing demand for AI in web development",
+      "Expansion into new markets"
+    ],
+    "threats": [
+      "Intense competition in cloud services",
+      "Potential regulatory challenges"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Vercel",
       "title": "Vercel - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "fetchedAt": "2026-06-26T23:06:59.707Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://vercel.com/",
       "title": "Agentic Infrastructure",
-      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "fetchedAt": "2026-06-26T23:06:59.707Z",
       "kind": "homepage"
     },
     {
       "url": "https://vercel.com/about",
       "title": "About Us",
-      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "fetchedAt": "2026-06-26T23:06:59.707Z",
       "kind": "homepage"
     },
     {
       "url": "https://tracxn.com/d/companies/vercel/__uPuJfXzfvAQs0wmUuqRiXFxW4uGbcaKUHjHks8VPbrI",
       "title": "Vercel - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
-      "fetchedAt": "2026-06-26T22:42:14.966Z",
+      "fetchedAt": "2026-06-26T23:06:59.707Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:14.966Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:06:59.707Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

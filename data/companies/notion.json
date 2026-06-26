@@ -2,7 +2,8 @@
   "slug": "notion",
   "name": "Notion",
   "domain": "notion.com",
-  "summary": "Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster.",
+  "tagline": "The all-in-one workspace for your notes, tasks, and projects.",
+  "summary": "Notion is a productivity and note-taking application developed by Notion Labs, Inc., serving as a workspace for knowledge management, data organization, and project tracking. Founded in 2013 and launched in 2016, Notion has grown to over 100 million users worldwide, offering a platform that integrates various work functions into a single interface.",
   "facts": [
     {
       "label": "Founded",
@@ -12,75 +13,139 @@
       ]
     },
     {
-      "label": "Headquarters",
-      "value": "San Francisco. History",
+      "label": "Launch Year",
+      "value": "2016",
       "citations": [
         2
       ]
     },
     {
-      "label": "Employees",
-      "value": "10",
+      "label": "Headquarters",
+      "value": "San Francisco, California",
       "citations": [
         2
+      ]
+    },
+    {
+      "label": "Users",
+      "value": "Over 100 million",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "label": "Valuation",
+      "value": "$10 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Notion AI Release",
+      "value": "February 2023",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Notion Mail Shutdown",
+      "value": "September 22, 2026",
+      "citations": [
+        3
       ]
     }
   ],
   "funding": [
     {
-      "stage": "Seed",
       "amount": "$2 million",
+      "date": "2013",
+      "investors": [],
       "citations": [
         2
       ]
     },
     {
       "amount": "$50 million",
+      "date": "January 2020",
       "investors": [
-        "Coatue Management"
+        "Index Ventures"
+      ],
+      "citations": [
+        2
+      ]
+    },
+    {
+      "amount": "$275 million",
+      "date": "October 2021",
+      "investors": [
+        "Coatue Management",
+        "Sequoia Capital"
       ],
       "citations": [
         2
       ]
     }
   ],
-  "competitors": [],
+  "competitors": [
+    "Atlassian",
+    "Superhuman",
+    "Fyxer"
+  ],
+  "swot": {
+    "strengths": [
+      "Large user base of over 100 million",
+      "Integration of AI features for enhanced productivity",
+      "Strong brand recognition in the productivity software market"
+    ],
+    "weaknesses": [
+      "Dependence on continuous innovation to maintain user engagement",
+      "Recent shutdown of Notion Mail may affect user retention"
+    ],
+    "opportunities": [
+      "Expansion of AI capabilities and features",
+      "Potential for new integrations and partnerships"
+    ],
+    "threats": [
+      "Intense competition from established productivity tools",
+      "Rapid changes in technology and user preferences"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Notion",
       "title": "Notion - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "fetchedAt": "2026-06-26T23:08:18.684Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.notion.com/",
       "title": "The AI workspace that works for you. | Notion",
-      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "fetchedAt": "2026-06-26T23:08:18.684Z",
       "kind": "homepage"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
       "title": "Notion (productivity software) - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "fetchedAt": "2026-06-26T23:08:18.684Z",
       "kind": "wikipedia"
     },
     {
-      "url": "https://www.linkedin.com/company/notionhq/",
-      "title": "Notion | LinkedIn",
-      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "url": "https://techcrunch.com/2026/06/25/notion-mail-shuts-down-amid-agent-takeover/",
+      "title": "Notion Mail shuts down amid agent takeover | TechCrunch",
+      "fetchedAt": "2026-06-26T23:08:18.684Z",
       "kind": "homepage"
     },
     {
       "url": "https://www.forbes.com/companies/notion/",
       "title": "Notion | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:22.001Z",
+      "fetchedAt": "2026-06-26T23:08:18.684Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:22.001Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:08:18.684Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

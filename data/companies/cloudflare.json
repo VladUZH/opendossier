@@ -2,56 +2,143 @@
   "slug": "cloudflare",
   "name": "Cloudflare",
   "domain": "cloudflare.com",
-  "summary": "Welcome to Cloudflare - Powering the next generation of applications Hero video off in Low preview — use High mode and refresh for full motion. Agents Week is happening now April 13 - April 17!",
+  "tagline": "Powering the next generation of applications.",
+  "summary": "Cloudflare, Inc. is an American technology company headquartered in San Francisco, California, that provides a range of internet services, including content delivery network (CDN) services, cloud cybersecurity, DDoS mitigation, and ICANN-accredited domain registration. Founded in 2009, Cloudflare has grown to serve approximately 21.3% of all websites on the Internet as of January 2026, and has integrated artificial intelligence into its infrastructure to enhance its offerings.",
   "facts": [
     {
       "label": "Founded",
-      "value": "2009",
+      "value": "July 26, 2009",
       "citations": [
         0
       ]
     },
     {
       "label": "Headquarters",
-      "value": "San Francisco, California",
+      "value": "San Francisco, California, U.S.",
       "citations": [
         0
       ]
     },
     {
-      "label": "Employees",
-      "value": "50",
+      "label": "Revenue (2025)",
+      "value": "$2.168 billion",
       "citations": [
-        1
+        0
+      ]
+    },
+    {
+      "label": "Operating Income (2025)",
+      "value": "-$207 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Net Income (2025)",
+      "value": "-$102 million",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Total Assets (2025)",
+      "value": "$6.036 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Total Equity (2025)",
+      "value": "$1.459 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees (2025)",
+      "value": "5,156",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Public Trading",
+      "value": "NYSE: NET since September 13, 2019",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Market Reach",
+      "value": "21.3% of all websites on the Internet as of January 2026",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Recent Acquisitions",
+      "value": "Replicate (November 2025), Human Native (January 2026)",
+      "citations": [
+        0
       ]
     }
   ],
   "funding": [],
-  "competitors": [],
+  "competitors": [
+    "Akamai",
+    "Amazon Web Services",
+    "Fastly",
+    "Microsoft Azure"
+  ],
+  "swot": {
+    "strengths": [
+      "Strong market presence with 21.3% of websites using its services",
+      "Diverse range of services including CDN, DDoS mitigation, and cybersecurity",
+      "Integration of AI into its infrastructure"
+    ],
+    "weaknesses": [
+      "Negative operating and net income in 2025",
+      "Controversies regarding content neutrality and service termination"
+    ],
+    "opportunities": [
+      "Expansion of AI-driven services",
+      "Growing demand for cybersecurity solutions"
+    ],
+    "threats": [
+      "Intense competition in the cloud services market",
+      "Potential legal challenges related to content moderation"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Cloudflare",
       "title": "Cloudflare - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "fetchedAt": "2026-06-26T23:08:46.080Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.cloudflare.com/",
       "title": "Cloudflare: Build for the agent era",
-      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "fetchedAt": "2026-06-26T23:08:46.080Z",
       "kind": "homepage"
     },
     {
-      "url": "https://www.cloudflare.com/about-overview/",
-      "title": "About us | Cloudflare",
-      "fetchedAt": "2026-06-26T22:42:25.828Z",
+      "url": "https://finance.yahoo.com/quote/NET/profile/",
+      "title": "Your privacy choices",
+      "fetchedAt": "2026-06-26T23:08:46.080Z",
+      "kind": "homepage"
+    },
+    {
+      "url": "https://www.linkedin.com/company/cloudflare",
+      "title": "Cloudflare | LinkedIn",
+      "fetchedAt": "2026-06-26T23:08:46.080Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:25.828Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:08:46.080Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

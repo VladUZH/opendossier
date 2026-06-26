@@ -2,25 +2,75 @@
   "slug": "openai",
   "name": "OpenAI",
   "domain": "forbes.com",
-  "summary": "OpenAI, the company that kicked off the AI frenzy three years ago, is at an inflection point. With increasing financial pressure ahead of a highly-anticipated IPO — and archrival Anthropic picking up steam — the company is going through a strategic shift.",
+  "tagline": "Ensuring that artificial general intelligence benefits all of humanity.",
+  "summary": "OpenAI is an American artificial intelligence research organization founded in December 2015, known for developing advanced AI models like ChatGPT and DALL-E. The company operates as a for-profit public benefit corporation, focusing on achieving artificial general intelligence while prioritizing safety and societal benefits. OpenAI has raised significant funding, primarily from Microsoft, and is recognized as a leader in the AI industry.",
   "facts": [
     {
       "label": "Founded",
-      "value": "2015",
+      "value": "December 8, 2015",
       "citations": [
         0
       ]
     },
     {
       "label": "Headquarters",
-      "value": "San Francisco",
+      "value": "1455 3rd Street, San Francisco, California, U.S.",
       "citations": [
         0
       ]
     },
     {
-      "label": "Employees",
-      "value": "52",
+      "label": "CEO",
+      "value": "Sam Altman",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Revenue (2025 est.)",
+      "value": "$13.1 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Net Income (2025 est.)",
+      "value": "$−9 billion",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Employees (2026 est.)",
+      "value": "4,500",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Valuation (2026)",
+      "value": "$852 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Total Funding",
+      "value": "$180 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Key Investors",
+      "value": "Microsoft, SoftBank Group, Thrive Capital",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Major Products",
+      "value": "ChatGPT, GPT-5.5, OpenAI Codex, DALL-E",
       "citations": [
         0
       ]
@@ -28,87 +78,84 @@
   ],
   "funding": [
     {
-      "amount": "$180",
+      "stage": "Series G",
+      "amount": "$75 million",
+      "date": "April 22, 2026",
+      "investors": [
+        "Robinhood"
+      ],
       "citations": [
         2
       ]
     },
     {
       "stage": "Series G",
-      "amount": "$180",
+      "amount": "$40 million",
+      "date": "March 20, 2026",
       "citations": [
         2
       ]
     },
     {
       "stage": "Series G",
-      "amount": "$75M",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "stage": "Series G",
-      "amount": "$75M",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "stage": "Series G",
-      "amount": "$180",
-      "citations": [
-        2
-      ]
-    },
-    {
-      "stage": "Series H",
-      "amount": "$132",
+      "amount": "$122 billion",
+      "date": "February 27, 2026",
+      "investors": [
+        "SoftBank Group, Amazon, Nvidia, Microsoft"
+      ],
       "citations": [
         2
       ]
     }
   ],
   "competitors": [
-    "companies like Mistral AI",
-    "Anthropic",
-    "Cohere",
-    "Llc CIN: 831960637",
-    "United States",
-    "Active Sep 18",
-    "2018 - 2063 (As on Dec 31",
     "Mistral AI",
-    "San Francisco (United States)",
-    "Goldman Sachs",
-    "85 others 89/100 2nd Mistral AI 2023",
-    "Paris (France)",
-    "Series C Provider of customizable",
-    "solutions for  applications $3"
+    "Anthropic",
+    "Cohere"
   ],
+  "swot": {
+    "strengths": [
+      "Leading position in AI research and development",
+      "Strong financial backing from major investors",
+      "Innovative products like ChatGPT and DALL-E"
+    ],
+    "weaknesses": [
+      "High operational costs leading to significant net losses",
+      "Recent leadership instability"
+    ],
+    "opportunities": [
+      "Growing demand for AI solutions across various industries",
+      "Potential for IPO and increased market presence"
+    ],
+    "threats": [
+      "Intense competition from other AI companies",
+      "Legal challenges related to copyright and AI training data"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/OpenAI",
       "title": "OpenAI - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "fetchedAt": "2026-06-26T23:06:29.149Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.forbes.com/companies/openai/",
       "title": "OpenAI | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "fetchedAt": "2026-06-26T23:06:29.149Z",
       "kind": "homepage"
     },
     {
       "url": "https://tracxn.com/d/companies/openai/__kElhSG7uVGeFk1i71Co9-nwFtmtyMVT7f-YHMn4TFBg",
       "title": "OpenAI - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
-      "fetchedAt": "2026-06-26T22:42:12.185Z",
+      "fetchedAt": "2026-06-26T23:06:29.149Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:12.185Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:06:29.149Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

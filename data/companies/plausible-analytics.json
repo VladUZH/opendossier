@@ -2,48 +2,123 @@
   "slug": "plausible-analytics",
   "name": "Plausible Analytics",
   "domain": "plausible.io",
-  "summary": "Plausible is a lightweight and open-source Google Analytics alternative. Your website data is 100% yours and the privacy of your visitors is respected.",
+  "tagline": "A simple, privacy-friendly alternative to Google Analytics.",
+  "summary": "Plausible Analytics is an open-source web analytics software that provides a lightweight and privacy-conscious alternative to traditional analytics tools like Google Analytics. Founded in 2018 by Uku Täht and Marko Saric, the platform is designed to respect user privacy by not using cookies or personal data. It is self-funded and has grown to serve over 19,000 paying subscribers, including notable clients like Basecamp and Hugging Face.",
   "facts": [
     {
       "label": "Founded",
-      "value": "2019",
+      "value": "December 2018",
       "citations": [
         0
       ]
+    },
+    {
+      "label": "Annual Recurring Revenue",
+      "value": "$1 million as of June 2022",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Number of Paying Subscribers",
+      "value": "Over 19,000",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Tracked Pageviews",
+      "value": "Over 260 billion",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "label": "Compliance",
+      "value": "GDPR and CCPA compliant",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Open Source License",
+      "value": "GNU Affero General Public License v3 (AGPLv3)",
+      "citations": [
+        0
+      ]
+    },
+    {
+      "label": "Team Size",
+      "value": "10 employees",
+      "citations": [
+        3
+      ]
     }
   ],
-  "funding": [],
-  "competitors": [],
+  "funding": [
+    {
+      "stage": "Self-funded",
+      "investors": [],
+      "citations": [
+        2
+      ]
+    }
+  ],
+  "competitors": [
+    "Google Analytics",
+    "Matomo",
+    "Fathom Analytics"
+  ],
+  "swot": {
+    "strengths": [
+      "Privacy-friendly analytics without cookies",
+      "Open-source and transparent",
+      "Self-funded and profitable",
+      "Simple and user-friendly interface"
+    ],
+    "weaknesses": [
+      "Limited features compared to larger competitors",
+      "Not suitable for all analytics use cases"
+    ],
+    "opportunities": [
+      "Growing demand for privacy-focused tools",
+      "Expansion into new markets and customer segments"
+    ],
+    "threats": [
+      "Competition from established analytics platforms",
+      "Changes in data privacy regulations"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Plausible_Analytics",
       "title": "Plausible Analytics - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:28.716Z",
+      "fetchedAt": "2026-06-26T23:11:24.546Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://plausible.io/",
       "title": "Plausible Analytics | Simple, privacy-friendly Google Analytics alternative",
-      "fetchedAt": "2026-06-26T22:42:28.716Z",
+      "fetchedAt": "2026-06-26T23:11:24.546Z",
       "kind": "homepage"
     },
     {
       "url": "https://plausible.io/about",
       "title": "About | Plausible Analytics",
-      "fetchedAt": "2026-06-26T22:42:28.716Z",
+      "fetchedAt": "2026-06-26T23:11:24.546Z",
       "kind": "homepage"
     },
     {
-      "url": "https://plausible.totalsecurity.com/",
-      "title": "Plausible · Web analytics",
-      "fetchedAt": "2026-06-26T22:42:28.716Z",
+      "url": "https://www.linkedin.com/company/plausible-analytics",
+      "title": "Plausible Analytics | LinkedIn",
+      "fetchedAt": "2026-06-26T23:11:24.546Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:28.716Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:11:24.546Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }

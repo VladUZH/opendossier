@@ -2,7 +2,8 @@
   "slug": "stripe",
   "name": "Stripe",
   "domain": "stripe.com",
-  "summary": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models and manage money movement. Global GDP running on Stripe: Financial infrastructure to grow your revenue.",
+  "tagline": "Building the economic infrastructure for the internet.",
+  "summary": "Stripe, Inc. is a leading financial services and software as a service (SaaS) company that provides payment processing solutions for online businesses. Founded in 2009 by brothers Patrick and John Collison, Stripe has grown to become the largest privately owned financial technology company, processing over $1.9 trillion in payments volume in 2025. With dual headquarters in South San Francisco, California, and Dublin, Ireland, Stripe offers a comprehensive suite of financial tools designed to help businesses of all sizes manage payments, billing, and financial operations.",
   "facts": [
     {
       "label": "Founded",
@@ -12,51 +13,139 @@
       ]
     },
     {
+      "label": "Founders",
+      "value": "Patrick Collison, John Collison",
+      "citations": [
+        2
+      ]
+    },
+    {
       "label": "Headquarters",
-      "value": "South San Francisco, California",
+      "value": "South San Francisco, California, and Dublin, Ireland",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Valuation",
+      "value": "$159 billion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Payments Volume Processed (2025)",
+      "value": "$1.9 trillion",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Number of Employees (2025)",
+      "value": "8,500",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Number of Businesses Served",
+      "value": "5 million",
+      "citations": [
+        2
+      ]
+    },
+    {
+      "label": "Historical Uptime",
+      "value": "99.999%",
+      "citations": [
+        1
+      ]
+    },
+    {
+      "label": "Active Subscriptions Managed",
+      "value": "200 million",
+      "citations": [
+        1
+      ]
+    }
+  ],
+  "funding": [
+    {
+      "amount": "$2 million",
+      "date": "2011",
+      "investors": [
+        "Elon Musk",
+        "Peter Thiel",
+        "Sequoia Capital",
+        "Andreessen Horowitz",
+        "SV Angel"
+      ],
       "citations": [
         2
       ]
     }
   ],
-  "funding": [],
-  "competitors": [],
+  "competitors": [
+    "PayPal",
+    "Square",
+    "Adyen",
+    "Braintree"
+  ],
+  "swot": {
+    "strengths": [
+      "Comprehensive suite of financial tools",
+      "High transaction volume and customer base",
+      "Strong brand recognition in fintech"
+    ],
+    "weaknesses": [
+      "Dependence on online payment processing market",
+      "Recent layoffs may affect morale and productivity"
+    ],
+    "opportunities": [
+      "Expansion into new markets and services",
+      "Growing demand for digital payment solutions"
+    ],
+    "threats": [
+      "Intense competition in the fintech space",
+      "Regulatory challenges in different countries"
+    ]
+  },
   "sources": [
     {
       "url": "https://en.wikipedia.org/wiki/Stripe",
       "title": "Stripe - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:13.774Z",
+      "fetchedAt": "2026-06-26T23:06:44.100Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://stripe.com/",
       "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
-      "fetchedAt": "2026-06-26T22:42:13.774Z",
+      "fetchedAt": "2026-06-26T23:06:44.100Z",
       "kind": "homepage"
     },
     {
       "url": "https://en.wikipedia.org/wiki/Stripe,_Inc.",
       "title": "Stripe, Inc. - Wikipedia",
-      "fetchedAt": "2026-06-26T22:42:13.774Z",
+      "fetchedAt": "2026-06-26T23:06:44.100Z",
       "kind": "wikipedia"
     },
     {
       "url": "https://www.forbes.com/companies/stripe/",
       "title": "Stripe | Company Overview & News",
-      "fetchedAt": "2026-06-26T22:42:13.774Z",
+      "fetchedAt": "2026-06-26T23:06:44.100Z",
       "kind": "homepage"
     },
     {
-      "url": "https://stripe.com/payments",
-      "title": "Stripe Payments | Global Payment Processing Platform",
-      "fetchedAt": "2026-06-26T22:42:13.774Z",
+      "url": "https://www.linkedin.com/company/stripe",
+      "title": "Stripe | LinkedIn",
+      "fetchedAt": "2026-06-26T23:06:44.100Z",
       "kind": "homepage"
     }
   ],
   "meta": {
-    "generatedAt": "2026-06-26T22:42:13.774Z",
-    "generator": "heuristic",
-    "confidence": "low",
-    "notes": "Generated offline by the no-LLM heuristic extractor — facts are pattern-matched from the cited sources and may be incomplete. Configure an LLM provider (Anthropic, OpenAI or a local Ollama model) for richer, fuller synthesis."
+    "generatedAt": "2026-06-26T23:06:44.100Z",
+    "generator": "openai",
+    "model": "gpt-4o-mini",
+    "confidence": "high"
   }
 }
