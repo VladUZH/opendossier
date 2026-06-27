@@ -1,5 +1,9 @@
 services:
   opendossier:
+    # Builds from source by default. To use the prebuilt multi-arch image instead
+    # (published to GHCR on every release), comment out `build:` and run
+    # `docker compose pull && docker compose up`:
+    #   image: ghcr.io/vladuzh/opendossier:latest
     build: .
     image: opendossier
     ports:
@@ -7,6 +11,7 @@ services:
     environment:
       # Defaults to the zero-key heuristic engine. Override here or in .env.local.
       LLM_PROVIDER: ${LLM_PROVIDER:-heuristic}
+      NEXT_TELEMETRY_DISABLED: "1"
     # Optional: drop your keys in .env.local (gitignored) to use an LLM.
     env_file:
       - path: .env.local
