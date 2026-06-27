@@ -7,6 +7,7 @@ import { getGatherer, dataDir } from '../core/config.js';
 import { Corpus } from '../core/store/corpus.js';
 import type { SourceGatherer } from '../core/search/types.js';
 import { renderDossier } from './render.js';
+import { parseArgs } from './args.js';
 
 /** Minimal .env loader (no dependency): load .env.local then .env without overriding real env. */
 function loadEnv(): void {
@@ -63,12 +64,7 @@ function withProgress(base: SourceGatherer): SourceGatherer {
 
 async function main(): Promise<void> {
   loadEnv();
-  let args = process.argv.slice(2);
-  // Allow both `opendossier research "X"` and `npm run research -- "X"` (npm eats "research").
-  if (args[0] === 'research') args = args.slice(1);
-
-  const flags = new Set(args.filter((a) => a.startsWith('--')));
-  const name = args.filter((a) => !a.startsWith('--')).join(' ').trim();
+  const { name, flags } = parseArgs(process.argv.slice(2));
   if (!name) usage();
 
   const provider = getProvider();

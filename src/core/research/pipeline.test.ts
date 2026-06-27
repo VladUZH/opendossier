@@ -104,4 +104,164 @@ describe('researchCompany', () => {
     expect(profile.meta.confidence).toBe('low');
     expect(profile.summary).toBe('');
   });
+
+  it('produces a non-empty slug for a non-Latin company name', async () => {
+    const empty = gatherer({
+      async search(): Promise<SearchHit[]> {
+        return [];
+      },
+    });
+    const profile = await researchCompany('日本語', {
+      provider: new HeuristicProvider(),
+      gatherer: empty,
+      now: fixedNow,
+    });
+    expect(profile.name).toBe('日本語');
+    expect(profile.slug.length).toBeGreaterThan(0);
+  });
+
+  it('honors maxSources, limiting both fetches and final sources', async () => {
+    let fetches = 0;
+    const g = gatherer({
+      async search(): Promise<SearchHit[]> {
+        return [
+          { url: 'https://acme.example', title: 'a', snippet: '' },
+          { url: 'https://b.example', title: 'b', snippet: '' },
+          { url: 'https://c.example', title: 'c', snippet: '' },
+          { url: 'https://en.wikipedia.org/wiki/Acme_Robotics', title: 'w', snippet: '' },
+        ];
+      },
+      async fetch(url: string): Promise<FetchedPage> {
+        fetches++;
+        return { url, title: url, text: 'x.', kind: 'homepage' };
+      },
+    });
+    const profile = await researchCompany('Acme Robotics', {
+      provider: new HeuristicProvider(),
+      gatherer: g,
+      maxSources: 2,
+      now: fixedNow,
+    });
+    expect(fetches).toBe(2);
+    expect(profile.sources).toHaveLength(2);
+  });
+
+  it('dedups duplicate search URLs before applying maxSources', async () => {
+    let fetches = 0;
+    const g = gatherer({
+      async search(): Promise<SearchHit[]> {
+        return [
+          { url: 'https://acme.example', title: 'a', snippet: '' },
+          { url: 'https://acme.example', title: 'a2', snippet: '' },
+          { url: 'https://acme.example', title: 'a3', snippet: '' },
+          { url: 'https://en.wikipedia.org/wiki/Acme_Robotics', title: 'w', snippet: '' },
+        ];
+      },
+      async fetch(url: string): Promise<FetchedPage> {
+        fetches++;
+        return PAGES[url];
+      },
+    });
+    const profile = await researchCompany('Acme Robotics', {
+      provider: new HeuristicProvider(),
+      gatherer: g,
+      maxSources: 2,
+      now: fixedNow,
+    });
+    expect(fetches).toBe(2);
+    expect(profile.sources.map((s) => s.url)).toEqual([
+      'https://acme.example',
+      'https://en.wikipedia.org/wiki/Acme_Robotics',
+    ]);
+  });
+
+  it('compacts citation indices when a middle source fails to fetch', async () => {
+    const g = gatherer({
+      async search(): Promise<SearchHit[]> {
+        return [
+          { url: 'https://acme.example', title: 'h', snippet: '' },
+          { url: 'https://mid.example', title: 'm', snippet: '' },
+          { url: 'https://en.wikipedia.org/wiki/Acme_Robotics', title: 'w', snippet: '' },
+        ];
+      },
+      async fetch(url: string): Promise<FetchedPage> {
+        if (url.includes('mid')) throw new Error('blip');
+        return PAGES[url];
+      },
+    });
+    const profile = await researchCompany('Acme Robotics', {
+      provider: new HeuristicProvider(),
+      gatherer: g,
+      now: fixedNow,
+    });
+    expect(profile.sources.map((s) => s.kind)).toEqual(['homepage', 'wikipedia']);
+    const fund = profile.funding[0];
+    expect(fund.citations).toEqual([1]);
+    expect(profile.sources[fund.citations[0]].kind).toBe('wikipedia');
+  });
+
+  it('prefers a non-wikipedia source for the domain even when wikipedia is fetched first', async () => {
+    const g = gatherer({
+      async search(): Promise<SearchHit[]> {
+        return [
+          { url: 'https://en.wikipedia.org/wiki/Acme_Robotics', title: 'w', snippet: '' },
+          { url: 'https://acme.example', title: 'h', snippet: '' },
+        ];
+      },
+    });
+    const profile = await researchCompany('Acme Robotics', {
+      provider: new HeuristicProvider(),
+      gatherer: g,
+      now: fixedNow,
+    });
+    expect(profile.domain).toBe('acme.example');
+    expect(profile.sources[0].kind).toBe('wikipedia');
+  });
+
+  it('returns an empty low-confidence profile when every fetch fails', async () => {
+    const g = gatherer({
+      async fetch(): Promise<FetchedPage> {
+        throw new Error('blocked');
+      },
+    });
+    const profile = await researchCompany('Acme Robotics', {
+      provider: new HeuristicProvider(),
+      gatherer: g,
+      now: fixedNow,
+    });
+    expect(profile.sources).toHaveLength(0);
+    expect(profile.summary).toBe('');
+    expect(profile.facts).toHaveLength(0);
+    expect(profile.meta.confidence).toBe('low');
+  });
+
+  it('surfaces a provider synthesis error', async () => {
+    const boom = {
+      id: 'anthropic' as const,
+      async synthesize() {
+        throw new Error('model down');
+      },
+    };
+    await expect(
+      researchCompany('Acme Robotics', { provider: boom, gatherer: gatherer(), now: fixedNow }),
+    ).rejects.toThrow('model down');
+  });
+
+  it('throws (not silently degrades) when a provider over-cites beyond the sources', async () => {
+    const overciter = {
+      id: 'anthropic' as const,
+      async synthesize() {
+        return {
+          summary: '',
+          facts: [{ label: 'X', value: 'Y', citations: [9] }],
+          funding: [],
+          competitors: [],
+          confidence: 'low' as const,
+        };
+      },
+    };
+    await expect(
+      researchCompany('Acme Robotics', { provider: overciter, gatherer: gatherer(), now: fixedNow }),
+    ).rejects.toThrow(/citation index 9/);
+  });
 });

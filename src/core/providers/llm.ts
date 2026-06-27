@@ -4,6 +4,13 @@ import type { Evidence, ProfileDraft } from './types.js';
 
 const MAX_DOC_CHARS = 6000;
 
+/** Models emit messy citation arrays (floats, strings, negatives). Keep only the valid
+ *  non-negative integers and drop the rest, rather than discarding the whole response. */
+const CitationsSchema = z
+  .array(z.unknown())
+  .default([])
+  .transform((arr) => arr.filter((n): n is number => typeof n === 'number' && Number.isInteger(n) && n >= 0));
+
 /** The JSON contract we ask any LLM to fill. Lenient: coerces and defaults. */
 const DraftResponseSchema = z.object({
   tagline: z.string().optional(),
@@ -13,7 +20,7 @@ const DraftResponseSchema = z.object({
       z.object({
         label: z.string(),
         value: z.string(),
-        citations: z.array(z.number().int().nonnegative()).default([]),
+        citations: CitationsSchema,
       }),
     )
     .default([]),
@@ -24,7 +31,7 @@ const DraftResponseSchema = z.object({
         amount: z.string().optional(),
         date: z.string().optional(),
         investors: z.array(z.string()).optional(),
-        citations: z.array(z.number().int().nonnegative()).default([]),
+        citations: CitationsSchema,
       }),
     )
     .default([]),
@@ -59,19 +66,55 @@ export function buildSynthesisMessages(evidence: Evidence): { system: string; us
   return { system, user };
 }
 
+/** Scan text for top-level balanced `{...}` objects, respecting string literals/escapes. */
+function balancedObjects(text: string): string[] {
+  const out: string[] = [];
+  let depth = 0;
+  let start = -1;
+  let inStr = false;
+  let esc = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (ch === '\\') esc = true;
+      else if (ch === '"') inStr = false;
+      continue;
+    }
+    if (ch === '"') inStr = true;
+    else if (ch === '{') {
+      if (depth === 0) start = i;
+      depth++;
+    } else if (ch === '}' && depth > 0) {
+      if (--depth === 0 && start >= 0) {
+        out.push(text.slice(start, i + 1));
+        start = -1;
+      }
+    }
+  }
+  return out;
+}
+
+/**
+ * Extract the model's JSON object, tolerating surrounding prose, stray braces, and
+ * illustrative code fences. Prefers the LAST ```json fence (the real answer usually
+ * follows an example), then falls back to scanning the whole response — so a brace in
+ * the prose or an example block can't shadow or break the real object.
+ */
 function extractJson(raw: string): unknown {
-  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  const candidate = fence ? fence[1] : raw;
-  const start = candidate.indexOf('{');
-  const end = candidate.lastIndexOf('}');
-  if (start === -1 || end === -1 || end < start) {
-    throw new Error('No JSON object found in model response');
+  const fences = [...raw.matchAll(/```(?:json)?\s*([\s\S]*?)```/gi)].map((m) => m[1]);
+  const candidates = [...fences.reverse(), raw];
+  for (const cand of candidates) {
+    for (const obj of balancedObjects(cand)) {
+      try {
+        const parsed = JSON.parse(obj);
+        if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+      } catch {
+        /* not valid JSON — try the next balanced candidate */
+      }
+    }
   }
-  try {
-    return JSON.parse(candidate.slice(start, end + 1));
-  } catch {
-    throw new Error('Model response was not valid JSON');
-  }
+  throw new Error('No JSON object found in model response');
 }
 
 /** LLMs emit `null` for "no value"; our optional fields expect absence. Recursively

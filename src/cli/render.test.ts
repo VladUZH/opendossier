@@ -44,4 +44,40 @@ describe('renderDossier', () => {
     expect(out).toMatch(/heuristic/);
     expect(out).toMatch(/confidence/i);
   });
+
+  it('renders multi-index citation markers 1-based and comma-joined', () => {
+    const p = { ...profile, facts: [{ label: 'Investors', value: 'A,B', citations: [0, 1] }] };
+    expect(renderDossier(p, { color: false })).toMatch(/A,B \[1,2\]/);
+  });
+
+  it('omits empty sections (no bare headers, no dangling bullets)', () => {
+    const minimal: CompanyProfile = {
+      slug: 'x',
+      name: 'X',
+      summary: '',
+      facts: [],
+      funding: [{ citations: [] }], // schema-valid but all-empty round
+      competitors: [],
+      sources: [],
+      meta: { generatedAt: '2026-06-27T00:00:00.000Z', generator: 'heuristic', confidence: 'low' },
+    };
+    const min = renderDossier(minimal, { color: false });
+    expect(min).not.toMatch(/^Facts$/m);
+    expect(min).not.toMatch(/^Funding$/m);
+    expect(min).not.toMatch(/^Sources$/m);
+    expect(min.split('\n')).not.toContain('  • ');
+    expect(min).not.toMatch(/\[1\]/);
+  });
+
+  it('strips terminal control/escape sequences from untrusted fields', () => {
+    const evil = {
+      ...profile,
+      facts: [{ label: 'Founded', value: '2019\x1b]0;pwned\x07\x1b[2J', citations: [0] }],
+      sources: [{ url: 'https://acme.example', title: 'Acme\x1b[31mRED', fetchedAt: '2026-06-27T00:00:00.000Z', kind: 'homepage' as const }],
+    };
+    const o = renderDossier(evil, { color: false });
+    expect(o).toContain('2019');
+    expect(o).not.toContain('\x1b');
+    expect(o).not.toContain(']0;pwned');
+  });
 });

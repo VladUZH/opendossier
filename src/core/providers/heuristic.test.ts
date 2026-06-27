@@ -71,6 +71,74 @@ describe('HeuristicProvider', () => {
     expect(d.competitors).toContain('Locus Robotics');
   });
 
+  it('extracts headquarters when the cue is capitalized at the start of a sentence', async () => {
+    const e = ev([
+      { url: 'https://x.example', kind: 'homepage', text: 'Headquartered in Boston, Massachusetts, the company builds robots.' },
+    ]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.facts.find((f) => f.label === 'Headquarters')?.value).toMatch(/Boston/);
+  });
+
+  it('does not treat "raised concerns/prices" near a dollar figure as funding', async () => {
+    const e = ev([
+      { url: 'https://a.example', text: 'Critics raised concerns about the $2 billion acquisition.' },
+      { url: 'https://b.example', text: 'The company raised prices this year and now makes $5 billion in annual revenue.' },
+    ]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.funding).toHaveLength(0);
+  });
+
+  it('deduplicates an identical funding round reported by multiple sources', async () => {
+    const e = ev([
+      { url: 'https://a.example', text: 'Acme raised $80 million in a Series B round.' },
+      { url: 'https://b.example', text: 'Acme raised $80 million in a Series B round.' },
+    ]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.funding).toHaveLength(1);
+  });
+
+  it('strips trailing punctuation from a funding amount', async () => {
+    const e = ev([{ url: 'https://x.example', text: 'In 2021 the startup raised $5,000,000.' }]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.funding[0].amount).toBe('$5,000,000');
+  });
+
+  it('rejects an implausible founding year', async () => {
+    const e = ev([{ url: 'https://x.example', text: 'Acme was founded in 9999.' }]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.facts.find((f) => f.label === 'Founded')).toBeUndefined();
+  });
+
+  it('does not treat a product launch year as the founding year', async () => {
+    const e = ev([{ url: 'https://x.example', text: 'The iPhone launched in 2007 to great acclaim.' }]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.facts.find((f) => f.label === 'Founded')).toBeUndefined();
+  });
+
+  it('does not invent competitors from filler/negation phrases', async () => {
+    const e = ev([{ url: 'https://x.example', text: 'Its rivals are difficult to identify.' }]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.competitors).toHaveLength(0);
+  });
+
+  it('excludes investor firms and locations the source conflates with competitors', async () => {
+    const e = ev([
+      { url: 'https://x.example', text: 'Competitors include Netlify, San Francisco (United States), and Bessemer Venture Partners.' },
+    ]);
+    const d = await new HeuristicProvider().synthesize(e);
+    expect(d.competitors).toContain('Netlify');
+    expect(d.competitors).not.toContain('San Francisco (United States)');
+    expect(d.competitors.some((c) => /Partners/.test(c))).toBe(false);
+  });
+
+  it('extracts an employee count cited to its source', async () => {
+    const e = ev([{ url: 'https://x.example', text: 'The firm has 10,000+ employees worldwide.' }]);
+    const d = await new HeuristicProvider().synthesize(e);
+    const emp = d.facts.find((f) => f.label === 'Employees');
+    expect(emp?.value).toBe('10,000+');
+    expect(emp?.citations).toEqual([0]);
+  });
+
   it('does not treat a bare valuation/market-cap figure as a funding round', async () => {
     const e = ev([
       {

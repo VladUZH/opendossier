@@ -86,4 +86,53 @@ describe('parseDraftResponse', () => {
   it('throws when no JSON object is present', () => {
     expect(() => parseDraftResponse('I cannot help with that.', 1)).toThrow();
   });
+
+  it('ignores stray braces in surrounding prose', () => {
+    expect(parseDraftResponse('Result {see below}: {"summary":"hi","confidence":"low"}', 1).summary).toBe('hi');
+    expect(parseDraftResponse('{"summary":"hi"} Done :}', 1).summary).toBe('hi');
+  });
+
+  it('uses the real (last) ```json fence, not an illustrative first one', () => {
+    const raw = 'Example:\n```json\n{"summary":"EXAMPLE"}\n```\nActual:\n```json\n{"summary":"REAL"}\n```';
+    expect(parseDraftResponse(raw, 1).summary).toBe('REAL');
+  });
+
+  it('falls back to scanning raw text when the first fence holds no JSON', () => {
+    expect(parseDraftResponse('```python\nprint(1)\n```\n{"summary":"hi","confidence":"low"}', 1).summary).toBe('hi');
+    expect(parseDraftResponse('```\n```\nHere: {"summary":"hi"}', 1).summary).toBe('hi');
+  });
+
+  it('drops invalid citation entries (negative / float / string) instead of crashing', () => {
+    expect(parseDraftResponse(JSON.stringify({ summary: 's', facts: [{ label: 'X', value: 'y', citations: [-1, 0] }] }), 1).facts[0].citations).toEqual([0]);
+    expect(parseDraftResponse(JSON.stringify({ summary: 's', facts: [{ label: 'X', value: 'y', citations: [1.5, 0] }] }), 2).facts[0].citations).toEqual([0]);
+    expect(parseDraftResponse(JSON.stringify({ summary: 's', facts: [{ label: 'X', value: 'y', citations: ['0', 1] }] }), 2).facts[0].citations).toEqual([1]);
+  });
+
+  it('clamps citations at exactly docCount (== docCount is dropped, < is kept)', () => {
+    const d = parseDraftResponse(JSON.stringify({ summary: 's', facts: [{ label: 'X', value: 'y', citations: [0, 1, 2] }] }), 2);
+    expect(d.facts[0].citations).toEqual([0, 1]);
+  });
+
+  it('still throws on a trailing comma (strict JSON — a conscious choice)', () => {
+    expect(() => parseDraftResponse('{"summary":"hi","confidence":"low",}', 1)).toThrow();
+  });
+
+  it('throws when a required field (fact.label) is null rather than silently dropping the fact', () => {
+    expect(() => parseDraftResponse(JSON.stringify({ summary: 's', facts: [{ label: null, value: 'y', citations: [0] }] }), 1)).toThrow();
+  });
+});
+
+describe('buildSynthesisMessages — multiple docs', () => {
+  it('indexes every doc and truncates each at MAX_DOC_CHARS', () => {
+    const multi: Evidence = {
+      name: 'Acme',
+      docs: [
+        { text: 'one', source: { url: 'https://one.example', title: 'a', fetchedAt: '2026-06-27T00:00:00.000Z', kind: 'homepage' } },
+        { text: 'A'.repeat(6000) + 'ZZZTAIL', source: { url: 'https://two.example', title: 'b', fetchedAt: '2026-06-27T00:00:00.000Z', kind: 'search' } },
+      ],
+    };
+    const { user } = buildSynthesisMessages(multi);
+    expect(user).toContain('[1] (search) https://two.example');
+    expect(user).not.toContain('ZZZTAIL');
+  });
 });
