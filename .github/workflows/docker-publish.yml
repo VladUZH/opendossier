@@ -4,8 +4,6 @@ name: Publish Docker image
 # release/tag (and on demand). First publish: make the GHCR package public under
 # Packages → opendossier → Package settings → Change visibility.
 on:
-  push:
-    tags: ['v*']
   release:
     types: [published]
   workflow_dispatch:
