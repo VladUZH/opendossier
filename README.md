@@ -11,7 +11,7 @@ The open-source company-research tool you actually run yourself. Point it at a c
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-2C4A68.svg)](tsconfig.json)
 ![Zero-config](https://img.shields.io/badge/first%20run-zero%20config%20·%20no%20API%20key-4A6B3A.svg)
 
-![OpenDossier directory](docs/home.png)
+![OpenDossier — research any company into a cited dossier](docs/home.png)
 
 </div>
 
