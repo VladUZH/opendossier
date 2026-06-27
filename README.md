@@ -2,34 +2,42 @@
 
 # OpenDossier
 
-### Build a sourced dossier on any company — self-hosted, bring your own LLM, no telemetry.
+### Self-hosted, open-source company research that cites every fact — bring your own LLM (or none), no telemetry.
 
-The open-source company-research tool you actually run yourself. Point it at a company name; it researches the public web and compiles a **cited** profile — summary, key facts, funding, competitors — that you own as plain files.
+Point it at a company name; it researches the public web and compiles a **source-cited** profile — summary, key facts, funding, competitors — that you own as plain files. Runs with no API key, in your terminal or a Next.js app.
 
 [![CI](https://github.com/VladUZH/opendossier/actions/workflows/ci.yml/badge.svg)](https://github.com/VladUZH/opendossier/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-A4361F.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-2C4A68.svg)](tsconfig.json)
 ![Zero-config](https://img.shields.io/badge/first%20run-zero%20config%20·%20no%20API%20key-4A6B3A.svg)
 
-![OpenDossier — research any company into a cited dossier](docs/home.png)
+![OpenDossier — researching a company live, into a cited dossier](docs/demo.gif)
 
 </div>
 
 ## Why
 
-Closed "AI company research" tools are appearing fast — a multi-agent system reads the web and hands you an instant company profile. They're useful, but they're hosted black boxes: you can't self-host them, you can't see or control their sources, you can't bring your own model to control cost, and your queries go to someone else's servers. When one such tool hit the Hacker News front page, the top comment asked *"do you plan to make it open source?"* — the maker declined, citing API costs.
+If you research companies, you've probably hit the new wave of closed "AI company research" tools: point one at a company, it reads the web, hands you a profile. Useful — but hosted black boxes. You can't self-host them, can't see or steer their sources, can't bring your own model to control cost, and your queries live on someone else's servers.
 
-**OpenDossier is the answer to that comment.** Bringing your own LLM key (or running a local model, or no model at all) dissolves the cost objection. Every claim is cited and dated, so you can judge it instead of trusting it. And the whole dataset is a folder of JSON files you can grep, diff, fork, and export — no rug-pull.
+OpenDossier is the open version, built around three things those tools don't give you:
+
+- **No key required to try it.** The default engine reads real fetched sources and needs no LLM, so a fresh clone is useful before you paste anything. Point it at Claude, OpenAI, or a local Ollama model for richer output — you control (and pay) your own model cost, or run a local model / the no-key engine for **free**.
+- **Every fact links to its source, with a fetch date.** A citation tells you *where a claim came from* so you can check it — not that the source is correct (that's why each dossier also shows which engine produced it and a confidence level). Uncited claims are dropped, not shown.
+- **Your data is files, not a SaaS.** Dossiers are `data/companies/<slug>.json` — greppable, diffable, forkable, exportable. No database, no lock-in, no rug-pull.
+
+*For analysts, founders, and tinkerers who want to research companies without renting a black box.* (The nudge to build it: one of these tools hit the HN front page and the top comment asked if it'd be open-sourced — the maker declined, citing API costs. Bring-your-own-key is the answer to that.)
 
 ## What it does
 
-- 🔎 **Research any company** → a structured, **source-cited** dossier (web UI *and* CLI).
-- 🧾 **Every fact carries a citation** to a numbered source, with the fetch date. Provenance (which engine produced it) and a confidence level are shown, not hidden.
-- 🔌 **LLM-agnostic.** Anthropic (Claude), OpenAI, a local **Ollama** model, or a **zero-key heuristic** engine — same interface, your choice, swappable with one env var.
-- 🆓 **Works with no API key at all.** The default heuristic engine pattern-matches real fetched sources, so a fresh clone is genuinely useful before you paste any key.
+- 🔎 **Research a company → a structured, source-cited dossier** (web UI *and* CLI). Sources today are DuckDuckGo + Wikipedia, so coverage tracks a company's public web footprint (more connectors are on the roadmap).
+- 🧾 **Every shipped fact links to a numbered source, with a fetch date.** Uncited claims are dropped. Provenance (which engine produced it) and a confidence level are shown, not hidden — built to be *audited*, not trusted.
+- 🔌 **LLM-agnostic.** Anthropic (Claude), OpenAI, a local **Ollama** model, or a **zero-key heuristic** engine — same pipeline, your choice, swappable with one env var.
+- 🆓 **Works with no API key at all.** The default heuristic engine pattern-matches real fetched sources (honestly labeled low-confidence), so a fresh clone is useful before you paste any key.
 - 📁 **Your data is a folder of files.** Dossiers live in `data/companies/<slug>.json` — greppable, diffable, forkable, trivially exportable. No database to stand up, no lock-in.
-- 🙈 **No telemetry.** It calls the web sources and the LLM *you* configured. Nothing else.
-- 🏠 **Self-hostable by construction.** It's a Next.js app plus a file corpus. `npm install && npm run dev`.
+- 🙈 **No telemetry.** It calls the web sources and the LLM *you* configured. Nothing else (it even disables Next.js's own telemetry).
+- 🏠 **Self-hostable by construction.** It's a Next.js app plus a file corpus — `docker compose up` or `npm install && npm run dev`.
+
+![Browse a seeded directory of 15 companies, each a cited dossier](docs/home.png)
 
 ## 30-second quickstart
 
@@ -114,9 +122,18 @@ Running a local model? `LLM_PROVIDER=ollama` needs no key at all. Your key and y
         no API key            your model, your cost        data/companies/*.json
 ```
 
-Source-gathering, the LLM, and the file store are all behind small interfaces, so every part is swappable and the whole pipeline is deterministically unit-tested (no network, no keys in CI).
+Source-gathering, the LLM, and the file store are all behind small interfaces, so every part is swappable and the whole pipeline is covered by **129 deterministic tests** — no network, no keys in CI.
 
 ![A dossier with citations and provenance](docs/profile.png)
+
+## Security
+
+You self-host this, and it runs a server-side web fetcher — so it was hardened before launch. Two issues were found and fixed in pre-release code, both now covered by regression tests:
+
+- An **unauthenticated path-traversal** via the save endpoint's slug (`/api/save`): slugs are validated on read *and* write, so they can't escape the corpus directory. ([test](src/core/store/corpus.test.ts))
+- An **SSRF** in the web fetcher: it now refuses private / loopback / link-local / cloud-metadata addresses and non-`http(s)` schemes, re-checked on every redirect hop. ([test](src/core/search/web.test.ts))
+
+This is diligence, not a guarantee — it's MIT software you run yourself. Found something? Please [open an issue](https://github.com/VladUZH/opendossier/issues).
 
 ## How it compares
 
@@ -161,7 +178,7 @@ All settings are environment variables (see [`.env.example`](.env.example)); **e
 ## Development
 
 ```bash
-npm test          # vitest — 127 tests, deterministic, no network/keys
+npm test          # vitest — 129 tests, deterministic, no network/keys
 npm run typecheck # tsc --noEmit
 npm run build     # production build
 npm run seed      # (re)generate the seeded directory with the configured provider
@@ -169,6 +186,10 @@ npm run seed      # (re)generate the seeded directory with the configured provid
 
 The codebase is a small, framework-agnostic core (`src/core/`) — `schema`, `providers`, `search`, `research`, `store` — used by both the CLI (`src/cli/`) and the Next.js app (`app/`).
 
+## Contributing
+
+It's a small, readable codebase (a framework-agnostic TypeScript core + a Next.js app + a CLI) and a friendly place to start — see [CONTRIBUTING.md](CONTRIBUTING.md). Issues, ideas, and PRs are all welcome.
+
 ## License
 
-[MIT](LICENSE). Stars are earned, not bought — if OpenDossier is useful to you, a star helps others find it. 🗂️
+[MIT](LICENSE) — yours to run, fork, and build on.
