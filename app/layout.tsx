@@ -43,6 +43,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href={REPO} target="_blank" rel="noreferrer">
                 GitHub
               </a>
+              <span className="live">
+                <span className="pulse" />
+                self-hosted
+              </span>
             </nav>
           </div>
         </header>

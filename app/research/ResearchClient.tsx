@@ -104,6 +104,26 @@ export default function ResearchClient({ initialQuery }: { initialQuery: string 
           </div>
         </div>
 
+        {!running && steps.length === 0 && !result && !error && (
+          <div className="examples">
+            <span>try</span>
+            {['Anthropic', 'Stripe', 'Linear', 'Figma', 'Vercel'].map((name) => (
+              <button
+                key={name}
+                type="button"
+                className="example-chip"
+                onClick={() => {
+                  setQuery(name);
+                  startedFor.current = null;
+                  run(name);
+                }}
+              >
+                {name}
+              </button>
+            ))}
+          </div>
+        )}
+
         {(running || steps.length > 0) && (
           <div className="console" aria-live="polite">
             {steps.map((s, i) => (

@@ -12,30 +12,72 @@ export default async function Home() {
     <main>
       <section className="hero">
         <div className="wrap">
-          <span className="kicker">Open-source company intelligence</span>
-          <h1>
-            Build a sourced <em>dossier</em> on any company.
-          </h1>
-          <p className="lede">
-            OpenDossier researches the public web and compiles a cited company profile — funding,
-            facts, competitors, the works. Self-hosted, bring your own LLM, no telemetry. The
-            Crunchbase alternative you actually run yourself.
-          </p>
+          <div className="hero-grid">
+            <div className="hero-main">
+              <span className="kicker">Open-source company intelligence</span>
+              <h1>
+                Field-grade <em>dossiers</em> on any company.
+              </h1>
+              <p className="lede">
+                OpenDossier researches the public web and compiles a fully cited profile — funding,
+                facts, competitors, sources. Self-hosted, bring your own LLM, zero telemetry. The
+                Crunchbase alternative you actually run yourself.
+              </p>
 
-          <div className="searchcard">
-            <form action="/research" method="get">
-              <input
-                type="text"
-                name="q"
-                placeholder="Research a company — e.g. Anthropic, Stripe, Linear…"
-                aria-label="Company name"
-                autoComplete="off"
-              />
-              <button type="submit">Compile ›</button>
-            </form>
-            <div className="hint">
-              <span>No account · no API key required to browse or run the offline engine</span>
-              <span>{companies.length} companies on file</span>
+              <div className="searchcard">
+                <form action="/research" method="get">
+                  <input
+                    type="text"
+                    name="q"
+                    placeholder="Research a company — e.g. Anthropic, Stripe, Linear…"
+                    aria-label="Company name"
+                    autoComplete="off"
+                  />
+                  <button type="submit">Compile ›</button>
+                </form>
+                <div className="hint">
+                  <span>No account · no key needed to browse or run the offline engine</span>
+                  <span>{companies.length} on file</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-console" aria-hidden="true">
+              <div className="hc-bar">
+                <span className="hc-dot" />
+                <span className="hc-dot" />
+                <span className="hc-dot" />
+                <span className="hc-title">opendossier · research</span>
+                <span className="hc-live">
+                  <span className="pulse" />
+                  LIVE
+                </span>
+              </div>
+              <div className="hc-body">
+                <div className="hc-line" style={{ animationDelay: '150ms' }}>
+                  <span className="tick">▸</span> searching public web…
+                </div>
+                <div className="hc-line dim" style={{ animationDelay: '360ms' }}>
+                  · 8 candidate sources found
+                </div>
+                <div className="hc-line" style={{ animationDelay: '560ms' }}>
+                  <span className="tick">▸</span> reading en.wikipedia.org <span className="cref">[1]</span>
+                </div>
+                <div className="hc-line" style={{ animationDelay: '780ms' }}>
+                  <span className="tick">▸</span> reading anthropic.com <span className="cref">[2]</span>
+                </div>
+                <div className="hc-line ok" style={{ animationDelay: '1060ms' }}>
+                  <span className="ok-mark">✓</span> Founded 2021 <span className="cref">[1]</span> · San
+                  Francisco <span className="cref">[2]</span>
+                </div>
+                <div className="hc-line ok" style={{ animationDelay: '1300ms' }}>
+                  <span className="ok-mark">✓</span> Series C · $450M <span className="cref">[2]</span>
+                </div>
+                <div className="hc-line" style={{ animationDelay: '1540ms' }}>
+                  <span className="tick">▸</span> synthesizing dossier…
+                  <span className="cursor" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
