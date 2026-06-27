@@ -1,0 +1,36 @@
+name: Bug report
+description: Something didn't work the way you expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, and what went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Engine / provider
+      description: heuristic (default) · anthropic · openai · ollama
+      placeholder: heuristic
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Node version, how you ran it (npm / docker), and any non-default env vars (NO API keys, please).
+      placeholder: |
+        macOS 14 · Node 20 · `npm run dev` · LLM_PROVIDER=ollama
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / output
+      description: Paste relevant output. Redact anything sensitive.
+      render: shell
