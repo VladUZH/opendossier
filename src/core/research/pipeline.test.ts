@@ -247,6 +247,30 @@ describe('researchCompany', () => {
     ).rejects.toThrow('model down');
   });
 
+  it('drops facts and funding the engine left uncited (every shipped claim is cited)', async () => {
+    const mixed = {
+      id: 'anthropic' as const,
+      async synthesize() {
+        return {
+          summary: 'x',
+          facts: [
+            { label: 'Cited', value: 'yes', citations: [0] },
+            { label: 'Uncited', value: 'no', citations: [] },
+          ],
+          funding: [
+            { stage: 'Seed', amount: '$1M', citations: [0] },
+            { stage: 'A', amount: '$5M', citations: [] },
+          ],
+          competitors: [],
+          confidence: 'low' as const,
+        };
+      },
+    };
+    const profile = await researchCompany('Acme Robotics', { provider: mixed, gatherer: gatherer(), now: fixedNow });
+    expect(profile.facts.map((f) => f.label)).toEqual(['Cited']);
+    expect(profile.funding.map((f) => f.stage)).toEqual(['Seed']);
+  });
+
   it('throws (not silently degrades) when a provider over-cites beyond the sources', async () => {
     const overciter = {
       id: 'anthropic' as const,

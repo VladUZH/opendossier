@@ -58,6 +58,11 @@ export async function researchCompany(name: string, deps: ResearchDeps): Promise
   // 4. Synthesize (LLM or heuristic — same interface).
   const draft = await provider.synthesize(evidence);
 
+  // Every shipped claim must point to a source: drop anything the engine left uncited,
+  // so a dossier never shows a fact or funding round you can't trace back to a source.
+  const facts = draft.facts.filter((f) => f.citations.length > 0);
+  const funding = draft.funding.filter((r) => r.citations.length > 0);
+
   // 5. Assemble + validate the dossier.
   const profile: CompanyProfile = {
     slug: slugify(name),
@@ -65,8 +70,8 @@ export async function researchCompany(name: string, deps: ResearchDeps): Promise
     domain,
     tagline: draft.tagline,
     summary: draft.summary,
-    facts: draft.facts,
-    funding: draft.funding,
+    facts,
+    funding,
     competitors: draft.competitors,
     swot: draft.swot,
     sources: docs.map((d) => d.source),
