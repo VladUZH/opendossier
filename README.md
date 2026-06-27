@@ -161,7 +161,7 @@ All settings are environment variables (see [`.env.example`](.env.example)); **e
 ## Development
 
 ```bash
-npm test          # vitest — 55 tests, deterministic, no network/keys
+npm test          # vitest — 127 tests, deterministic, no network/keys
 npm run typecheck # tsc --noEmit
 npm run build     # production build
 npm run seed      # (re)generate the seeded directory with the configured provider
