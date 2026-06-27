@@ -28,12 +28,15 @@
 - Have `skeptic-qa.md` open. Don't get defensive on the hallucination / wrapper / moat questions — the honest answers are good.
 
 ## Pre-flight checklist (before posting anything)
-- [ ] Repo is **public** (owner flipped it — STOP GATE B cleared).
-- [ ] README renders correctly on GitHub, images load, quickstart copy-pastes cleanly.
-- [ ] `git clone && npm install && npm run dev` works on a truly fresh machine/dir.
-- [ ] Repo description + topics set (discoverability).
-- [ ] A demo asset is embedded (screenshot at minimum; a GIF of the live `/research` console is better).
-- [ ] CI badge is green.
+- [x] Repo is **public** (STOP GATE B cleared).
+- [x] Repo description + 12 topics set (discoverability).
+- [x] Demo **GIF** of the live `/research` console embedded at the top of the README (`docs/demo.gif`).
+- [x] CI badge green; `git clone && npm install && npm test && npm run build` verified on a fresh clone.
+- [x] Test count is consistent everywhere (**129**), claims fact-checked against the code (red-team pass).
+- [ ] **Upload the social-preview image** (one-time, web only): repo → Settings → Social preview → upload `docs/social-preview.png`. This is what renders when the link is shared on HN/Reddit/X.
+- [ ] After the **v0.1.0 release** runs, make the **GHCR package public** (Packages → opendossier → Package settings → visibility) so `docker compose pull` works for everyone.
+- [ ] Re-read the README on GitHub on a phone — images load, quickstart copy-pastes cleanly.
+- [ ] Have `skeptic-qa.md` open; post your **security-hardening first comment** (in `show-hn.md`) within minutes of the Show HN, with the two commit links.
 - [ ] You can be present for the first 1–2 hours after the Show HN.
 
 ## Don't

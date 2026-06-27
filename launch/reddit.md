@@ -1,25 +1,27 @@
-# Reddit drafts (one per subreddit — do not cross-post the same text)
+# Reddit drafts (one per subreddit — do NOT cross-post the same text)
 
 Repo: https://github.com/VladUZH/opendossier
-Rules of engagement: read each sub's self-promo rules first; space posts out over days, not all at once; reply to every early comment; never ask for upvotes.
+Rules of engagement: read each sub's self-promo rules first; **space posts out over days, not all at once** (shared audiences + similar ledes = self-promo flag risk); **attach a screenshot/GIF** (r/selfhosted especially); reply to every early comment; never ask for upvotes. Each draft below leads with that sub's specific payoff — keep it that way.
 
 ---
 
 ## r/selfhosted
 
-**Title:** OpenDossier – self-hosted, open-source company research that cites its sources (no telemetry, bring your own LLM)
+**Title:** `docker compose up` company research — self-hosted, no telemetry, dossiers are plain JSON files you own
 
-I got tired of the new wave of "AI tells you everything about a company" tools being hosted black boxes — closed source, your queries on their servers, no way to bring your own model. So I built an open one you actually run yourself.
+**Attach:** the demo GIF (`docs/demo.gif`) or `docs/home.png` + `docs/profile.png`. A UI tool posted here with no screenshot gets "any screenshots?" as the first reply — lead with the visual.
 
-**OpenDossier** researches the public web and compiles a cited dossier on any company (summary, facts, funding, competitors). What makes it self-hoster-friendly:
+I wanted to research companies without a hosted black box reading my queries, so I built one you run yourself.
 
-- **Runs with `docker compose up` or `npm run dev`** — no account, no signup.
-- **No telemetry.** It only talks to the web sources and the LLM *you* configure. Nothing phones home.
-- **Your data is plain files.** Every dossier is a `data/companies/<slug>.json` you can grep, back up, version, and export. No database, no lock-in.
-- **No API key required to run it at all** — the default engine works offline-of-LLMs by pattern-matching the actual sources. Add Claude/OpenAI/Ollama only if you want richer output.
-- **Every fact is cited and dated**, with the engine + confidence level shown, so you can audit it.
+**OpenDossier** points at a company name, reads the public web, and compiles a cited dossier (summary, facts, funding, competitors). For self-hosters specifically:
 
-MIT licensed. Stack is Next.js + a small TypeScript core, file-based corpus. Would genuinely like feedback from this crowd on the self-host story — what would you want for a clean deploy?
+- Runs with `docker compose up` or `npm run dev` — no account, no signup. A prebuilt multi-arch image is published to GHCR on each release, so you can pull instead of build.
+- No telemetry. It talks only to the web sources and the LLM *you* configure — and it disables Next.js's own telemetry too. Want it fully offline of search as well? `SEARCH_PROVIDER=none`.
+- Your data is plain files — `data/companies/<slug>.json`, mounted to a host volume. Grep it, back it up, version it, export it. No DB.
+- No API key required at all: the default engine pattern-matches the fetched sources (low-confidence, honestly labeled). Add Claude/OpenAI/Ollama for the rich version.
+- It runs a server-side fetcher, so before launch I added an SSRF guard (blocks loopback/link-local/cloud-metadata targets and non-http(s) schemes) and fixed a path-traversal in the save path — both with regression tests.
+
+Honest limits: source coverage is DuckDuckGo + Wikipedia today, and the no-key engine is deliberately shallow. MIT, Next.js + a small TS core. What would you want for a clean deploy?
 
 Repo: https://github.com/VladUZH/opendossier
 
@@ -27,34 +29,34 @@ Repo: https://github.com/VladUZH/opendossier
 
 ## r/LocalLLaMA
 
-**Title:** OpenDossier – open-source company research that runs fully local with Ollama (or no LLM at all)
+**Title:** Company research with your local Ollama model (or no LLM at all) — same pipeline as a frontier model, source-grounded JSON
 
-Built an open-source "research any company → cited profile" tool that's **model-agnostic by design** — the LLM is behind an interface, so you can point it at a local Ollama model and nothing leaves your machine.
+Note on "local": your **prompts and synthesis stay local** via Ollama; the tool does reach out to the public web for the research step (DuckDuckGo + Wikipedia). Not claiming air-gapped — just that the model is yours.
 
-Why it might interest this sub:
+The substance for this crowd isn't "it's model-agnostic" (that's the easy part) — it's the layer that makes small local models usable for structured extraction:
 
-- **`LLM_PROVIDER=ollama`** and it runs against your local model — no API key, no cloud, no data exfiltration. Also supports Claude/OpenAI if you want, or a **zero-LLM heuristic** fallback that just pattern-matches fetched sources.
-- The synthesis prompt and JSON parsing are **shared across providers**, so a local model and a frontier model go through the exact same pipeline — easy to A/B "is my 8B model good enough for this task?"
-- **Source-grounded:** it fetches real pages (DuckDuckGo + Wikipedia), hands them to the model as numbered sources, and forces every fact to cite one. Less hallucination surface than free-form prompting, and you can see exactly what the model was given.
-- Everything is local files; no telemetry.
+- `LLM_PROVIDER=ollama` runs against your local model; the same system prompt + the same JSON parser are shared across providers, so it's an easy "is my 8B good enough?" A/B against a frontier model. (Caveat: JSON-mode is on for Ollama/OpenAI but not Anthropic, so it's not perfectly apples-to-apples.)
+- The JSON layer is built for messy local output: lenient zod, balanced-brace extraction (tolerates prose/braces around the object), fenced-code handling, null-stripping, and dropping invalid citation indices instead of crashing. There's also a zero-LLM heuristic extractor if you want a no-model baseline.
+- Source-grounded: it hands the model numbered fetched pages and asks each fact to cite one; the schema then rejects any citation that doesn't point to a real source, and uncited facts are dropped.
+- Known limits I'd state plainly: default model is `llama3.1`, docs are truncated to ~6k chars (small context windows lose sources), and there's no retry/repair if a model returns no JSON yet.
 
-Curious which local models do well at the structured-extraction-with-citations task — would love reports. MIT, repo: https://github.com/VladUZH/opendossier
+If you run it against a local model, I'd genuinely like a report — did the JSON hold, were the citations sane? MIT: https://github.com/VladUZH/opendossier
 
 ---
 
 ## r/opensource
 
-**Title:** OpenDossier – an MIT-licensed, self-hostable alternative to the closed "AI company research" tools
+**Title:** OpenDossier (MIT): an open, inspectable take on the closed "AI company research" tools — swappable everything, deterministic tests
 
-A new category of closed SaaS has popped up: point it at a company, it reads the web and writes you a profile. Useful, but hosted and proprietary. One that hit the front page recently had its top comment ask "will you open source it?" — answer was no, citing API costs. So here's an open take.
+A category of closed SaaS has popped up: point it at a company, it reads the web, writes a profile. Useful, but hosted and proprietary. Here's an MIT take built to be inspected and extended.
 
-**OpenDossier** (MIT) gathers public web sources and synthesizes a **cited** company dossier. Design goals that I think matter for an open project:
+What I think matters for an open project:
 
-- **No key required to try it** — a heuristic engine works with zero config; LLMs (Claude/OpenAI/Ollama) are an opt-in upgrade. Lowers the barrier to actually running it.
-- **Swappable everything** — the LLM, the search source, and the storage are all small interfaces. The core has no framework or vendor lock-in and is 100% deterministically unit-tested (no network/keys in CI).
-- **Transparent output** — citations, fetch dates, and provenance on every dossier.
-- **Data as files** — the corpus is greppable/forkable JSON, so the dataset itself is open and portable.
+- No key required to try it — a heuristic engine works with zero config; LLMs (Claude/OpenAI/Ollama) are an opt-in upgrade. Low barrier to actually running it.
+- Swappable everything — the LLM, the search source, and the storage are all small interfaces. The core has no framework or vendor lock-in, and the whole pipeline is deterministically tested (no network, no keys in CI — 129 tests).
+- Transparent output — every shipped fact links to a numbered source with a fetch date, plus provenance and a confidence level. Uncited claims are dropped.
+- Data as files — the corpus is greppable/forkable JSON, so the dataset itself is open and portable.
 
-It's a small, readable codebase (TypeScript core + Next.js UI + CLI) — friendly to contribute to. Roadmap and "what's intentionally not built yet" are spelled out in the README. Feedback and PRs welcome.
+Small, readable codebase (TS core + Next.js UI + CLI) with a CONTRIBUTING guide and "good first issue" areas. Roadmap and "what's intentionally not built yet" are spelled out. Feedback and PRs welcome.
 
 https://github.com/VladUZH/opendossier
